@@ -1,14 +1,11 @@
 <template>
-  <div style="width: 100%">
-    <OrganismsFooter />
-  </div>
+  <OrganismsNavbar />
+  <OrganismsChooser />
+  <OrganismsFooter />
 </template>
 
-
-<style lang="scss" >
+<style lang="scss">
 .relative {
   position: relative;
 }
 </style>
-
-
