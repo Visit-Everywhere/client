@@ -60,16 +60,16 @@
   </footer>
 </template>
 
-<style>
+<style lang="scss" scoped>
 .footer {
   padding-top: 20px;
   margin-top: 130px;
   width: 100%;
   background-color: #131620;
-}
-.footer-top {
-  display: flex;
-  justify-content: space-between;
+  &-top {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .footer-top-left,
 .footer-top-right {
