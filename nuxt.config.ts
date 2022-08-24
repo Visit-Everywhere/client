@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   },
   components: {
     global: true,
-    dirs: ["~/components", "~/components/templates"],
+    dirs: ["~/components"],
   },
   modern: true,
   build: {

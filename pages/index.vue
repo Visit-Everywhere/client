@@ -1,5 +1,7 @@
 <template>
-  <div style="width: 100%">index</div>
+  <div style="width: 100%">
+    <TemplatesIndexPage />
+  </div>
 </template>
 
 <script setup>
