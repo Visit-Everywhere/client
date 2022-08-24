@@ -70,13 +70,14 @@
     display: flex;
     justify-content: space-between;
   }
+  &-top-left,
+  &-top-right {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
 }
-.footer-top-left,
-.footer-top-right {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
+
 .footer-top-left-logo {
   width: 80px;
   height: 80px;
