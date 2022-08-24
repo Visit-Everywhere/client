@@ -3,16 +3,20 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-top-left">
-          <img src="assets/LOGO.png" alt="" class="footer-top-left-logo" />
+          <img
+            src="@/assets/img/LOGO.png"
+            alt=""
+            class="footer-top-left-logo"
+          />
           <a href="" class="footer-top-left-link"
             ><img
-              src="assets/footer/tg.png"
+              src="@/assets/img/tg.png"
               alt="Telegram"
               class="footer-top-left-link-tg"
           /></a>
           <a href="" class="footer-top-left-link"
             ><img
-              src="assets/footer/inst.png"
+              src="@/assets/img/inst.png"
               alt="Instagram"
               class="footer-top-left-link-inst"
           /></a>
@@ -36,13 +40,12 @@
         <div class="footer-mid-buttons">
           <button class="footer-mid-buttons-add_place">Add place</button>
           <img
-            src="assets/footer/gplay.png"
+            src="@/assets/img/gplay.png"
             alt=""
             class="footer-mid-buttons-btn"
-            onclick="window.location.href ='https://play.google.com/'"
           />
           <img
-            src="assets/footer/astore.png"
+            src="@/assets/img/astore.png"
             alt=""
             class="footer-mid-buttons-btn"
           />
@@ -76,95 +79,93 @@
     justify-content: start;
     align-items: center;
   }
-}
-
-.footer-top-left-logo {
-  width: 80px;
-  height: 80px;
-}
-.footer-top-left-link {
-  margin-left: 64px;
-  width: 36px;
-  height: 36px;
-}
-.footer-top-left-link:first-of-type {
-  margin-left: 40px;
-}
-
-.footer-top-right {
-  max-width: 650px;
-  flex-wrap: wrap;
-}
-.footer-top-right-link {
-  text-align: center;
-  color: #fff;
-  font-weight: 400;
-  font-size: 22px;
-  text-decoration: none;
-  margin-right: 32px;
-  transition: 0.2s color ease;
-}
-.footer-top-right-link:last-of-type {
-  margin-right: 0;
-}
-.footer-top-right-link:hover {
-  color: #eab52e;
-}
-.footer-mid {
-  margin-top: 40px;
-  padding: 0 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-mid-email::before {
-  margin-right: 30px;
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-color: transparent;
-  background-image: url("../assets/footer/email.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 29px 23px;
-  width: 29px;
-  height: 23px;
-}
-.footer-mid-email {
-  transition: 0.2s linear;
-  text-decoration: none;
-  color: #fff;
-  opacity: 0.8;
-  font-weight: 400;
-  font-size: 24px;
-}
-.footer-mid-email:hover {
-  opacity: 1;
-}
-.footer-mid-buttons {
-  display: flex;
-  justify-content: start;
-}
-.footer-mid-buttons-add_place {
-  width: 180px;
-  height: 53px;
-  background-color: #38405f;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 18px;
-  border: none;
-  outline: none;
-}
-.footer-mid-buttons-btn {
-  display: flex;
-  width: 180px;
-  height: 53px;
-  margin-left: 20px;
-}
-.footer-bot-text {
-  margin-top: 50px;
-  text-align: center;
-  line-height: 2em;
+  &-top-left-logo {
+    width: 80px;
+    height: 80px;
+  }
+  &-top-left-link {
+    margin-left: 64px;
+    width: 36px;
+    height: 36px;
+  }
+  &-top-left-link:first-of-type {
+    margin-left: 40px;
+  }
+  &-top-right {
+    max-width: 650px;
+    flex-wrap: wrap;
+  }
+  &-top-right-link {
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    text-decoration: none;
+    margin-right: 32px;
+    transition: 0.2s color ease;
+  }
+  &-top-right-link:last-of-type {
+    margin-right: 0;
+  }
+  &-top-right-link:hover {
+    color: #eab52e;
+  }
+  &-mid {
+    margin-top: 40px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-mid-email::before {
+    margin-right: 30px;
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    background-color: transparent;
+    background-image: url("../assets/footer/email.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 29px 23px;
+    width: 29px;
+    height: 23px;
+  }
+  &-mid-email {
+    transition: 0.2s linear;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+    font-weight: 400;
+    font-size: 24px;
+  }
+  &-mid-email:hover {
+    opacity: 1;
+  }
+  &-mid-buttons {
+    display: flex;
+    justify-content: start;
+  }
+  &-mid-buttons-add_place {
+    width: 180px;
+    height: 53px;
+    background-color: #38405f;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    border: none;
+    outline: none;
+  }
+  &-mid-buttons-btn {
+    display: flex;
+    width: 180px;
+    height: 53px;
+    margin-left: 20px;
+  }
+  &-bot-text {
+    margin-top: 50px;
+    text-align: center;
+    line-height: 2em;
+  }
 }
 </style>
