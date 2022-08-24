@@ -1,10 +1,14 @@
 <template>
-  <div>123</div>
+  <div style="width: 100%">
+123334
+  </div>
 </template>
 
-<script>
-export default {};
-</script>
 
-<style>
+<style lang="scss" >
+.relative {
+  position: relative;
+}
 </style>
+
+

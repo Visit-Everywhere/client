@@ -1,8 +1,10 @@
 node_modules
-*.log*
+*.log
 .nuxt
-.nitro
-.cache
+nuxt.d.ts
 .output
-.env
-dist
+package-lock.json
+
+# Local Netlify folder
+.netlify
+
