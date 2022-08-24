@@ -4,7 +4,7 @@
       <div class="header-left">
         <img src="assets/LOGO.png" alt="VE" class="header-logo" />
       </div>
-      <div class="header-city">Kyiv</div>
+      <NuxtLink to="/" class="header-city">Kyiv</NuxtLink>
       <nav class="header-nav">
         <a href="" class="header-nav-link">Filters</a>
         <a href="" class="header-nav-link">Events</a>
@@ -12,7 +12,7 @@
       </nav>
       <div class="header-right">
         <div class="header-lang">En</div>
-        <button class="header-login">Sign in</button>
+        <NuxtLink to="/login" class="header-login">Sign in</NuxtLink>
       </div>
       <button class="header-burger_btn">
         <span class="header-burger_btn-lines"></span>
