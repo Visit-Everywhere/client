@@ -1,19 +1,11 @@
 <template>
-  <div style="width: 100%">
-    <TemplatesIndexPage />
-  </div>
+  <OrganismsNavbar />
+  <OrganismsChooser />
+  <OrganismsFooter />
 </template>
 
-<script setup>
-definePageMeta({
-  layout: "custom",
-});
-</script>
-
-<style lang="scss" >
+<style lang="scss">
 .relative {
   position: relative;
 }
 </style>
-
-
