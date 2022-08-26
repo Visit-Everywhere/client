@@ -109,6 +109,7 @@
     padding: 16px 0px;
     transition: 0.3s ease;
     z-index: 1;
+    color: #fff;
   }
   &-btn:checked + .chooser-btn-label {
     color: #000;

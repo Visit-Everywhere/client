@@ -1,7 +1,9 @@
 <template>
   <OrganismsNavbar />
+  <MoleculesSearch />
   <OrganismsChooser />
   <OrganismsPopular />
+  <OrganismsBest />
   <OrganismsFooter />
 </template>
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="best">
+  <div class="popular">
     <div class="popular-header">
-      <h1 class="popular-title">Most popular places in Kyiv</h1>
+      <h1 class="popular-title">Best places in Kyiv</h1>
       <a href="" class="popular-header-link">Show all</a>
     </div>
     <div class="_section-container">
@@ -142,6 +142,7 @@
     font-weight: 600;
     font-size: 40px;
     color: #fff;
+    text-align: justify;
   }
   &-header-link {
     font-size: 18px;
