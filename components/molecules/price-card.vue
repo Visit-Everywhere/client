@@ -1,6 +1,6 @@
 <template>
   <div class="price-card" :style="{ backgroundColor }">
-    <h1 class="price-card__head">{{ label }}</h1>
+    <h1 class="price-card__header">{{ label }}</h1>
     <div class="price-card__list">
       <ul>
         <li v-for="(item, index) in list" :key="index">{{ item }}</li>
@@ -37,7 +37,7 @@ const props = defineProps({
   },
   price: {
     type: Number,
-    default: 4,
+    default: 3,
   },
 });
 console.log(props);

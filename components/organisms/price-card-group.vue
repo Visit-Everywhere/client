@@ -8,7 +8,7 @@
 </template>
 <script setup>
 const listOne = ["hui", "zalupa", "gay"];
-const listTwo = [1, 2, 3, 4];
+const listTwo = [1, 2, 3, 4, 5, 6];
 const listThree = ["back", "chek", "heck"];
 
 const priceCardOne = { label: "Silve", list: listOne, price: 3.99 };
