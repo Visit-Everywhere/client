@@ -101,10 +101,13 @@
 </template>
 
 <style lang="scss" scoped>
+<<<<<<< HEAD
 .container{
     max-width: 1180px;
     margin: 0 auto;
 }
+=======
+>>>>>>> e6a46cc025d1e308bba985cbc4f3e96bcd5be617
 .footer {
   padding-top: 20px;
   margin-top: 130px;
@@ -114,6 +117,7 @@
     display: flex;
     justify-content: space-between;
   }
+<<<<<<< HEAD
   &-top-left,
   &-top-right {
     display: flex;
@@ -212,6 +216,26 @@
 .footer-mobile {
   display: none;
   background: #131620;
+=======
+}
+.footer-top-left,
+.footer-top-right {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.footer-top-left-logo {
+  width: 80px;
+  height: 80px;
+}
+.footer-top-left-link {
+  margin-left: 64px;
+  width: 36px;
+  height: 36px;
+}
+.footer-top-left-link:first-of-type {
+  margin-left: 40px;
+>>>>>>> e6a46cc025d1e308bba985cbc4f3e96bcd5be617
 }
 
 .container-mobile {
