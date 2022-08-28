@@ -2,7 +2,7 @@
   <div class="chooser">
     <div class="chooser-container" id="chooser-container">
       <input type="radio" name="place" id="restaurants" class="chooser-btn" value="1" checked />
-      <label for="restaurants" class="chooser-btn-label">Restaurants</label>
+      <label for="restaurants" class="chooser-btn-label">{{ chooserBtn }}</label>
 
       <input type="radio" name="place" id="gas-stations" class="chooser-btn" value="2" />
       <label for="gas-stations" class="chooser-btn-label">Gas Stations</label>
@@ -45,6 +45,15 @@
     </button>
   </div>
 </template>
+
+<script setup>
+const props = defineProps({
+  chooserBtn: {
+    type: String,
+    default: "Похуй",
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 .chooser {

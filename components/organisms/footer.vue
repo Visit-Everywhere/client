@@ -3,23 +3,9 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-top-left">
-          <img
-            src="@/assets/img/LOGO.png"
-            alt=""
-            class="footer-top-left-logo"
-          />
-          <a href="" class="footer-top-left-link"
-            ><img
-              src="@/assets/img/tg.png"
-              alt="Telegram"
-              class="footer-top-left-link-tg"
-          /></a>
-          <a href="" class="footer-top-left-link"
-            ><img
-              src="@/assets/img/inst.png"
-              alt="Instagram"
-              class="footer-top-left-link-inst"
-          /></a>
+          <img src="@/assets/img/LOGO.png" alt="" class="footer-top-left-logo" />
+          <a href="" class="footer-top-left-link"><img src="@/assets/img/tg.png" alt="Telegram" class="footer-top-left-link-tg" /></a>
+          <a href="" class="footer-top-left-link"><img src="@/assets/img/inst.png" alt="Instagram" class="footer-top-left-link-inst" /></a>
         </div>
         <div class="footer-top-right">
           <a href="" class="footer-top-right-link">About Us</a>
@@ -30,31 +16,17 @@
       </div>
       <div class="footer-mid">
         <div class="footer-mid-link">
-          <a
-            class="footer-mid-email"
-            href="https://mail.google.com/"
-            target="_blank"
-            >everywhere.comp@gmail.com</a
-          >
+          <a class="footer-mid-email" href="https://mail.google.com/" target="_blank">everywhere.comp@gmail.com</a>
         </div>
         <div class="footer-mid-buttons">
           <button class="footer-mid-buttons-add_place">Add place</button>
-          <img
-            src="@/assets/img/gplay.png"
-            alt=""
-            class="footer-mid-buttons-btn"
-          />
-          <img
-            src="@/assets/img/astore.png"
-            alt=""
-            class="footer-mid-buttons-btn"
-          />
+          <img src="@/assets/img/gplay.png" alt="" class="footer-mid-buttons-btn" />
+          <img src="@/assets/img/astore.png" alt="" class="footer-mid-buttons-btn" />
         </div>
       </div>
       <div class="footer-bot">
         <p class="footer-bot-text">
-          By continuing to use our site, you agree to the terms of service and
-          privacy policy.
+          By continuing to use our site, you agree to the terms of service and privacy policy.
           <br />
           © Visit everywhere, 2022
         </p>
@@ -62,6 +34,15 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+const props = defineProps({
+  name: {
+    type: String,
+    default: "kruto",
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 .footer {

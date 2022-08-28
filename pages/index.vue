@@ -1,11 +1,14 @@
 <template>
-  <OrganismsNavbar />
+  <!-- <OrganismsNavbar />
   <MoleculesSearch />
   <OrganismsChooser />
   <OrganismsPopular />
   <OrganismsBest />
-  <OrganismsFooter />
+  <OrganismsFooter /> -->
+  <TemplatesIndexPage />
 </template>
+
+<script setup></script>
 
 <style lang="scss">
 .relative {
