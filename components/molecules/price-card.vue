@@ -1,14 +1,18 @@
 <template>
   <div class="price-card" :style="{ backgroundColor }">
-    <h1 class="price-card__header">{{ label }}</h1>
-    <div class="price-card__list">
-      <ul>
-        <li v-for="(item, index) in list" :key="index">{{ item }}</li>
-      </ul>
+    <div class="price-card__top">
+      <h1 class="price-card__top__header">{{ label }}</h1>
+      <div class="price-card__top__list">
+        <ul>
+          <li v-for="(item, index) in list" :key="index">{{ item }}</li>
+        </ul>
+      </div>
     </div>
-    <h4 class="price-card__description">{{ description }}</h4>
-    <h3 class="price-card__price">${{ price }}/month</h3>
-    <div class="price-card__subscribe" :style="{ backgroundColor: subscribeButtonColor }"><p>Subscribe</p></div>
+    <div class="price-card__bottom">
+      <h4 class="price-card__bottom__description">{{ description }}</h4>
+      <h3 class="price-card__bottom__price">${{ price }}/month</h3>
+      <div class="price-card__bottom__subscribe" :style="{ backgroundColor: subscribeButtonColor }"><p>Subscribe</p></div>
+    </div>
     <div class="price-card__choise" v-if="isHideChoise">Editor's Choice</div>
   </div>
 </template>
@@ -53,48 +57,55 @@ console.log(props);
   border-radius: 16px;
   padding: 36px;
   position: relative;
-  &__head {
-    line-height: 38.19px;
-    margin-bottom: 36px;
-    margin-right: 237px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__top {
+    &__header {
+      line-height: 38.19px;
+      margin-bottom: 36px;
+    }
+    &__list {
+      color: #d4d4d5;
+      font-size: 18px;
+      line-height: 24.55px;
+      margin-left: 18px;
+      margin-bottom: 25px;
+      font-weight: 300px;
+    }
   }
-  &__list {
-    color: #d4d4d5;
-    font-size: 18px;
-    line-height: 24.55px;
-    margin-left: 18px;
-    margin-bottom: 25px;
-    font-weight: 300px;
-  }
-  &__description {
-    max-width: 152px;
-    font-size: 24px;
-    line-height: 33px;
-    padding-bottom: 36px;
-    margin-right: 140px;
-  }
-  &__price {
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 38px;
-    max-width: 180px;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-  }
-  &__subscribe {
-    border-radius: 32px;
-    margin-top: 24px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 180px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-  &__subscribe p {
-    max-width: 81px;
-    margin: 0 auto;
-    text-align: center;
+  &__bottom {
+    &__description {
+      max-width: 152px;
+      font-size: 24px;
+      line-height: 33px;
+      padding-bottom: 36px;
+      margin-right: 140px;
+    }
+    &__price {
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 38px;
+      max-width: 180px;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+    &__subscribe {
+      border-radius: 32px;
+      margin-top: 24px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 180px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    &__subscribe p {
+      max-width: 81px;
+      margin: 0 auto;
+      text-align: center;
+    }
   }
   &__choise {
     position: absolute;
