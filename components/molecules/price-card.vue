@@ -8,7 +8,7 @@
     </div>
     <h4 class="price-card__description">{{ description }}</h4>
     <h3 class="price-card__price">${{ price }}/month</h3>
-    <div class="price-card__subscribe"><p>Subscribe</p></div>
+    <div class="price-card__subscribe" :style="{ backgroundColor: subscribeButtonColor }"><p>Subscribe</p></div>
     <div class="price-card__choise" v-if="isHideChoise">Editor's Choice</div>
   </div>
 </template>
@@ -39,6 +39,10 @@ const props = defineProps({
     type: Number,
     default: 3,
   },
+  subscribeButtonColor: {
+    type: String,
+    default: "#38405f",
+  },
 });
 console.log(props);
 </script>
@@ -67,6 +71,7 @@ console.log(props);
     font-size: 24px;
     line-height: 33px;
     padding-bottom: 36px;
+    margin-right: 140px;
   }
   &__price {
     font-weight: 400;
@@ -78,7 +83,6 @@ console.log(props);
     text-align: center;
   }
   &__subscribe {
-    background: #38405f;
     border-radius: 32px;
     margin-top: 24px;
     margin-left: auto;

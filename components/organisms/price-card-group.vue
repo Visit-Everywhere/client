@@ -8,11 +8,11 @@
 </template>
 <script setup>
 const listOne = ["hui", "zalupa", "gay"];
-const listTwo = [1, 2, 3, 4, 5, 6];
+const listTwo = [1, 2, 3, 4];
 const listThree = ["back", "chek", "heck"];
 
 const priceCardOne = { label: "Silve", list: listOne, price: 3.99 };
-const priceCardTwo = { label: "Gold", list: listTwo, price: 9.99 };
+const priceCardTwo = { label: "Gold", list: listTwo, price: 9.99, backgroundColor: "#38405F", isHideChoise: true, subscribeButtonColor: "#131620" };
 const priceCardThree = { label: "Platinum", list: listThree, price: 14.99 };
 
 const allCards = [{ ...priceCardOne }, { ...priceCardTwo }, { ...priceCardThree }];
@@ -28,7 +28,7 @@ const allCards = [{ ...priceCardOne }, { ...priceCardTwo }, { ...priceCardThree 
   grid-gap: 50px;
 }
 .width-container-590 {
-  max-width: 1180px;
+  max-width: 1280px;
 }
 .margin-auto {
   margin: 0 auto;
