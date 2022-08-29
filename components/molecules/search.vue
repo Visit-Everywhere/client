@@ -13,7 +13,7 @@
 </template>
 
 
-<style>
+<style scoped>
 .search {
   margin: 30px auto 0 auto;
   max-width: 780px;

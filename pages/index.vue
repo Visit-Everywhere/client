@@ -1,7 +1,5 @@
 <template>
-  <OrganismsNavbar />
-  <OrganismsChooser />
-  <OrganismsFooter />
+  <MoleculesCard />
 </template>
 
 <style lang="scss">
