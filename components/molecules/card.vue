@@ -1,14 +1,14 @@
 <template>
   <div class="card">
     <div class="card__picture">
-      <img src="@/assets/svg/bakery_ck_242952218_556012462396992_2001863340305304220_n 1.svg" alt="" />
+      <img src="@//assets/svg/bakery.svg" alt="" />
     </div>
     <div class="card__info">
       <p class="card__info-name">{{ name }}</p>
       <p class="card__info-time">{{ time }}</p>
     </div>
     <div class="card__button">
-      <button @click="">Edit</button>
+      <button class="card__button-button">Edit</button>
     </div>
   </div>
 </template>
@@ -28,6 +28,10 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .card {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+
   background: #131620;
   border-radius: 16px;
   padding: 16px;
@@ -35,23 +39,62 @@ const props = defineProps({
 
   &__picture {
     margin-bottom: 22px;
-    width: 100%;
     display: flex;
-    border: 1px solid #000000;
+
     border-radius: 16px;
     box-sizing: border-box;
+    justify-self: center;
   }
   &__info {
     display: flex;
     justify-content: space-between;
+
+    &-time {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 22px;
+      color: #ffffff;
+      margin-top: 6px;
+    }
+
+    &-name {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 33px;
+      color: #ffffff;
+      margin-bottom: 19px;
+    }
   }
-  &-name {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 33px;
-    color: #ffffff;
+  &__button{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        gap: 16px;
+
+    &-button{
+        padding: 16px 47px;
+        gap: 16px;
+        border: 2px solid #494A4D;
+        border-radius: 32px;
+        background:none ;
+
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.002em;
+        color: #FFFFFF;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        cursor: pointer;
+    }
+    &-button:hover{
+        color: #131620;
+        background-color: #FFFFFF;
+    }
+
   }
 }
 </style>
