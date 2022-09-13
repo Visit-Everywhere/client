@@ -25,6 +25,7 @@
   "dependencies": {
     "@vee-validate/rules": "^4.5.11",
     "@vueuse/core": "^8.7.3",
-    "vee-validate": "^4.5.11"
+    "vee-validate": "^4.5.11",
+    "vue-cli": "^2.9.6"
   }
 }
