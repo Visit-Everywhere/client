@@ -1,5 +1,5 @@
 <template>
-  <OrganismsLoginForm />
+  <OrganismsMainLoginForm />
 </template>
 
 <style lang="scss">
