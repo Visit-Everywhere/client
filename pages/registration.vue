@@ -1,6 +1,6 @@
 <template>
   <div>
-    <OrganismsMainLoginForm />
+    <OrganismsMainRegistrationForm />
   </div>
 </template>
 

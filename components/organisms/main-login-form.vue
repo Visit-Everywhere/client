@@ -6,7 +6,7 @@
         <AtomsVeInput inputPlaceholder="Email or phone" v-model="emailOrPhone" />
         <AtomsVeInput inputPlaceholder="Password" v-model="password" inputType="password" />
       </div>
-      <AtomsVeCheckbox checkboxLabel="Stay authorized" class="login-container__form__checkbox" v-model="checkboxValue" />
+      <AtomsVeCheckbox checkboxLabel="Stay authorized" class="login-container__form__checkbox" v-model="checkboxValue" veCheckboxId="stay" />
       <AtomsVeButton buttonValue="Login" class="login-container__form__button" />
     </form>
     <div class="login-container__under-form">
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="login-container__under-form__create">
-        <NuxtLink id="nuxt-links" to="#">Create account</NuxtLink>
+        <NuxtLink id="nuxt-links" to="http://localhost:3000/registration">Create account</NuxtLink>
         <NuxtLink id="nuxt-links" to="#">Forgot password?</NuxtLink>
       </div>
     </div>
@@ -74,18 +74,18 @@ export default {
       &__icons {
         display: flex;
         gap: 10px;
-      }
-      &__icons img {
-        cursor: pointer;
-        &:active {
-          opacity: 0.7;
+        & img {
+          cursor: pointer;
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
-    }
-    &__continue h4 {
-      font-weight: 400;
-      font-size: 16px;
-      letter-spacing: 0.002em;
+      & h4 {
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 0.002em;
+      }
     }
     &__create {
       display: flex;
@@ -101,6 +101,7 @@ export default {
   font-weight: 300;
   font-size: 18px;
   color: #d4d4d5;
+  opacity: 0.9;
 }
 #nuxt-links:active {
   opacity: 0.7;

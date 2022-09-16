@@ -9,7 +9,7 @@ export default {
   props: {
     inputPlaceholder: {
       type: String,
-      default: "Email or phone",
+      default: "enter the message",
     },
     inputWidth: {
       type: String,

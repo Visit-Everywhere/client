@@ -2,8 +2,4 @@
   <OrganismsMainLoginForm />
 </template>
 
-<style lang="scss">
-.relative {
-  position: relative;
-}
-</style>
+<style lang="scss"></style>

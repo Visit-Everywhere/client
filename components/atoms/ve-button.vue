@@ -22,7 +22,6 @@ export default {
 
 <style lang="scss" scoped>
 .form-container {
-  width: 180px;
   &__button {
     text-align: center;
     width: 100%;

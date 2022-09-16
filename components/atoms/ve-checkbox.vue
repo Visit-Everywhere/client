@@ -1,7 +1,7 @@
 <template>
-  <div class="input" onselectstart="return false" onmousedown="return false">
-    <input type="checkbox" id="ve-checkbox" class="input__checkbox" :value="value" :checked="modelValue.includes(value)" @change="(evt) => onChange(evt.target.value)" />
-    <label for="ve-checkbox" class="input__label">{{ checkboxLabel }}</label>
+  <div class="input" onselectstart="return false" onmousedown="return false" :style="{ textAlign: alignText }">
+    <input type="checkbox" :id="veCheckboxId" class="input__checkbox" :checked="isChecked" />
+    <label :for="veCheckboxId" class="input__label">{{ checkboxLabel }}</label>
   </div>
 </template>
 
@@ -21,17 +21,17 @@ export default {
       type: Array,
       default: () => [],
     },
-    method: {
-      onChange(value) {
-        if (this.modelValue.includes(this.value)) {
-          this.$emit(
-            "update:modelValue",
-            this.modelValue.filter((cv) => cv !== value)
-          );
-        } else {
-          this.$emit("update:modelValue", this.modelValue.concat(value));
-        }
-      },
+    veCheckboxId: {
+      type: String,
+      default: "",
+    },
+    alignText: {
+      type: String,
+      default: "left",
+    },
+    isChecked: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -44,9 +44,9 @@ export default {
   }
   &__label {
     padding-left: 22px;
-    color: #d4d4d5;
+    color: #808080;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
   }
   &__label::before {
     content: "";
@@ -56,7 +56,7 @@ export default {
     background-color: inherit;
     border: 2px solid #808080;
     border-radius: 50%;
-    vertical-align: top;
+    vertical-align: sub;
     margin-left: -22px;
     margin-right: 16px;
     transition: 0.3s;
@@ -68,5 +68,8 @@ input[type="checkbox"]:hover + label::before {
 }
 input[type="checkbox"]:checked + label::before {
   background-color: #fff;
+}
+input[type="checkbox"]:checked + label {
+  color: #d4d4d5;
 }
 </style>
