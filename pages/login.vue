@@ -1,6 +1,6 @@
 <template>
   <div>
-    <OrganismsMainLoginForm />
+    <OrganismsRestorePasswordEmail />
   </div>
 </template>
 

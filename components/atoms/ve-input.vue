@@ -23,10 +23,6 @@ export default {
       type: String,
       default: "string",
     },
-    inputMask: {
-      type: String,
-      default: "",
-    },
     inputType: {
       type: String,
       default: "text",

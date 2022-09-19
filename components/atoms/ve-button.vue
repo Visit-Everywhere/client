@@ -1,6 +1,6 @@
 <template>
-  <div onselectstart="return false" onmousedown="return false" class="form-container" :style="{ width: buttonWith }">
-    <input class="form-container__button" :value="buttonValue" />
+  <div onselectstart="return false" onmousedown="return false" class="button-container" :style="{ width: buttonWith }">
+    <input class="button-container__button" :value="buttonValue" />
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form-container {
+.button-container {
   &__button {
     text-align: center;
     width: 100%;
