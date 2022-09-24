@@ -1,8 +1,15 @@
 import { defineNuxtConfig } from "nuxt";
 export default defineNuxtConfig({
+  css: ["vuetify/lib/styles/main.sass", "@/assets/scss/app.scss"],
+  vite: {
+    define: {
+      "process.env.DEBUG": false,
+    },
+  },
   meta: {
     title: "VE NAXUI",
   },
+  srcDir: "./",
   // hooks: {
   //   "components:dirs"(dirs) {
   //     // Add ./components dir to the list
@@ -13,23 +20,21 @@ export default defineNuxtConfig({
   //   },
   // },
   // buildModules: ["vue-sticky-element"],
-  vue: {
-    compilerOptions: {
-      directiveTransforms: {
-        motion: () => ({
-          props: [],
-          needRuntime: true,
-        }),
-      },
-    },
-  },
-  srcDir: "./",
-  app: {
-    buildAssetsDir: "assets/",
-  },
-  modules: ["@pinia/nuxt", "@vueuse/nuxt"],
 
-  css: ["@/assets/scss/app.scss"],
+  // app: {
+  //   buildAssetsDir: "assets/",
+  // },
+  modules: [
+    [
+      "@pinia/nuxt",
+      {
+        autoImports: ["defineStore", "acceptHMRUpdate"],
+      },
+    ],
+    ,
+    "@vueuse/nuxt",
+  ],
+
   // styleResources: {
   //   sass: ["@/assets/scss/app.scss"],
   // },
@@ -47,6 +52,7 @@ export default defineNuxtConfig({
     //   sass: "@/assets/scss/app.scss",
     //   hoistUseStatements: true,
     // },
+    transpile: ["vuetify"],
     splitChunks: {
       pages: true,
       layouts: true,

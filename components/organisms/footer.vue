@@ -131,7 +131,7 @@
   text-decoration: none;
   color: white;
 }
-@media screen and(max-width: 1080px) {
+@media screen and (max-width: 1080px) {
   .footer {
     & h4 {
       font-weight: 400;
@@ -175,14 +175,14 @@
     color: white;
   }
 }
-@media screen and(max-width: 768px) {
+@media screen and (max-width: 768px) {
   .footer {
     &__main {
       flex-direction: column;
     }
   }
 }
-@media screen and(max-width: 425px) {
+@media screen and (max-width: 425px) {
   .footer {
     & h4 {
       font-size: 16px;
