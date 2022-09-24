@@ -1,171 +1,217 @@
 <template>
   <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-top-left">
-          <img
-            src="@/assets/img/LOGO.png"
-            alt=""
-            class="footer-top-left-logo"
-          />
-          <a href="" class="footer-top-left-link"
-            ><img
-              src="@/assets/img/tg.png"
-              alt="Telegram"
-              class="footer-top-left-link-tg"
-          /></a>
-          <a href="" class="footer-top-left-link"
-            ><img
-              src="@/assets/img/inst.png"
-              alt="Instagram"
-              class="footer-top-left-link-inst"
-          /></a>
-        </div>
-        <div class="footer-top-right">
-          <a href="" class="footer-top-right-link">About Us</a>
-          <a href="" class="footer-top-right-link">Terms</a>
-          <a href="" class="footer-top-right-link">Confidentiality</a>
-          <a href="" class="footer-top-right-link">For business owners</a>
-        </div>
+    <div class="footer__main">
+      <div class="footer__main__left">
+        <section class="footer__main__left__logos">
+          <img src="@/assets/img/LOGO.svg" alt="VE" />
+          <img src="@/assets/img/facebook.png" alt="facebook" />
+          <img src="@/assets/img/inst.png" alt="instagram" />
+          <div class="footer__main__left__logos__chat">
+            <img src="@/assets/img/chat-icon.png" alt="VE" />
+          </div>
+        </section>
+        <section class="footer__main__left__mail">
+          <img src="@/assets/img/email.png" alt="email" />
+          <h4>everywhere.comp@gmail.com</h4>
+        </section>
       </div>
-      <div class="footer-mid">
-        <div class="footer-mid-link">
-          <a
-            class="footer-mid-email"
-            href="https://mail.google.com/"
-            target="_blank"
-            >everywhere.comp@gmail.com</a
-          >
-        </div>
-        <div class="footer-mid-buttons">
-          <button class="footer-mid-buttons-add_place">Add place</button>
-          <img
-            src="@/assets/img/gplay.png"
-            alt=""
-            class="footer-mid-buttons-btn"
-          />
-          <img
-            src="@/assets/img/astore.png"
-            alt=""
-            class="footer-mid-buttons-btn"
-          />
-        </div>
-      </div>
-      <div class="footer-bot">
-        <p class="footer-bot-text">
-          By continuing to use our site, you agree to the terms of service and
-          privacy policy.
-          <br />
-          © Visit everywhere, 2022
-        </p>
+      <div class="footer__main__right">
+        <section class="footer__main__right__links">
+          <NuxtLink id="link-list" to="#">About us</NuxtLink>
+          <NuxtLink id="link-list" to="#">For business owners</NuxtLink>
+          <NuxtLink id="link-list" to="#">FAQ</NuxtLink>
+          <NuxtLink id="link-list" to="#">Confidentiality</NuxtLink>
+          <NuxtLink id="link-list" to="#">Terms</NuxtLink>
+        </section>
+        <section class="footer__main__right__buttons">
+          <div class="footer__main__right__buttons__add-place"><h5>Add place</h5></div>
+          <img src="@/assets/img/gplay.png" alt="google" />
+          <img src="@/assets/img/astore.png" alt="appstore" />
+        </section>
       </div>
     </div>
+    <section class="footer__under">
+      <h6>By continuing to use our site, you agree to the terms of service and privacy policy.</h6>
+      <h5>© Visit everywhere, 2022</h5>
+    </section>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 .footer {
-  padding-top: 20px;
-  margin-top: 130px;
-  width: 100%;
+  max-width: 100%;
   background-color: #131620;
-  &-top {
-    display: flex;
-    justify-content: space-between;
-  }
-  &-top-left,
-  &-top-right {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-  }
-  &-top-left-logo {
-    width: 80px;
-    height: 80px;
-  }
-  &-top-left-link {
-    margin-left: 64px;
-    width: 36px;
-    height: 36px;
-  }
-  &-top-left-link:first-of-type {
-    margin-left: 40px;
-  }
-  &-top-right {
-    max-width: 650px;
-    flex-wrap: wrap;
-  }
-  &-top-right-link {
-    text-align: center;
-    color: #fff;
-    font-weight: 400;
-    font-size: 22px;
-    text-decoration: none;
-    margin-right: 32px;
-    transition: 0.2s color ease;
-  }
-  &-top-right-link:last-of-type {
-    margin-right: 0;
-  }
-  &-top-right-link:hover {
-    color: #eab52e;
-  }
-  &-mid {
-    margin-top: 40px;
-    padding: 0 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  &-mid-email::before {
-    margin-right: 30px;
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    background-color: transparent;
-    background-image: url("../assets/footer/email.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 29px 23px;
-    width: 29px;
-    height: 23px;
-  }
-  &-mid-email {
-    transition: 0.2s linear;
-    text-decoration: none;
-    color: #fff;
-    opacity: 0.8;
+  color: #fff;
+  gap: 48px;
+  padding: 34px 20px 18px 20px;
+  & h4 {
     font-weight: 400;
     font-size: 24px;
   }
-  &-mid-email:hover {
-    opacity: 1;
-  }
-  &-mid-buttons {
-    display: flex;
-    justify-content: start;
-  }
-  &-mid-buttons-add_place {
-    width: 180px;
-    height: 53px;
-    background-color: #38405f;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 600;
+  & h5 {
+    font-weight: 400;
     font-size: 18px;
-    border: none;
-    outline: none;
   }
-  &-mid-buttons-btn {
+  & h6 {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  &__main {
     display: flex;
-    width: 180px;
-    height: 53px;
-    margin-left: 20px;
+    max-width: 1223px;
+    margin: 0 auto;
+    gap: 110px;
+    justify-content: center;
+    &__left {
+      &__logos {
+        display: flex;
+        order: 1;
+        align-items: center;
+        gap: 60px;
+        margin-bottom: 42px;
+        & img {
+          object-fit: contain;
+          max-height: 30px;
+        }
+        &__chat {
+          padding: 14px 14px 13px 13px;
+          border-radius: 16px;
+          background-color: #38405f;
+          max-height: 52px;
+          display: flex;
+        }
+      }
+      &__mail {
+        order: 3;
+        display: flex;
+        gap: 33.6px;
+        & img {
+          object-fit: contain;
+        }
+      }
+    }
+    &__right {
+      &__links {
+        order: 2;
+        display: flex;
+        gap: 32px;
+        margin-bottom: 41px;
+        margin-top: 10px;
+        white-space: nowrap;
+      }
+      &__buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        &__add-place {
+          display: flex;
+          justify-content: center;
+          background: #38405f;
+          border-radius: 8px;
+          width: 180px;
+          padding-top: 16px;
+          padding-bottom: 16px;
+          & h5 {
+            font-weight: 600;
+          }
+        }
+      }
+    }
   }
-  &-bot-text {
-    margin-top: 50px;
-    text-align: center;
-    line-height: 2em;
+  &__under {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 48px;
+  }
+}
+#link-list {
+  font-weight: 400;
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+}
+@media screen and(max-width: 1080px) {
+  .footer {
+    & h4 {
+      font-weight: 400;
+      font-size: 20px;
+    }
+    & h6 {
+      font-weight: 400;
+      font-size: 16px;
+    }
+    &__main {
+      gap: 30px;
+      &__left {
+        &__logos {
+          gap: 23px;
+        }
+        &__mail {
+          gap: 10px;
+        }
+      }
+      &__right {
+        &__links {
+          gap: 10px;
+        }
+        &__buttons {
+          gap: 16px;
+          &__add-place {
+            grid-column: 1 / -1;
+            width: 70%;
+          }
+          & img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  #link-list {
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+  }
+}
+@media screen and(max-width: 768px) {
+  .footer {
+    &__main {
+      flex-direction: column;
+    }
+  }
+}
+@media screen and(max-width: 425px) {
+  .footer {
+    & h4 {
+      font-size: 16px;
+    }
+    &__main {
+      &__left {
+        &__logos {
+          justify-content: space-between;
+        }
+        &__mail {
+          gap: 17px;
+        }
+      }
+      &__right {
+        &__links {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+        &__buttons {
+          grid-template-columns: repeat(2, 1fr);
+          &__add-place {
+            width: 100%;
+          }
+          img {
+            width: 90%;
+          }
+        }
+      }
+    }
   }
 }
 </style>

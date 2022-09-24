@@ -1,18 +1,10 @@
 <template>
   <div>
-    <div class="xyi">123</div>
+    <OrganismsMainLoginForm />
   </div>
 </template>
 
-<script setup>
-definePageMeta({
-  layout: "custom",
-});
-</script>
+<script setup></script>
 
-<style>
-.xyi {
-  width: 100%;
-  background: #000;
-}
-</style>
+<style></style>
+а

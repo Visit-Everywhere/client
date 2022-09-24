@@ -1,6 +1,4 @@
 <template>
-  <OrganismsNavbar />
-  <OrganismsChooser />
   <OrganismsFooter />
 </template>
 
