@@ -19,11 +19,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   const vuetify = createVuetify({
     components,
     directives,
-    theme: {
-      defaultTheme: "dark",
-    },
     locale: {
-      defaultLocale: "ja",
+      defaultLocale: "ru",
     },
   });
   nuxtApp.vueApp.use(vuetify);

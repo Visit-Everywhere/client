@@ -1,11 +1,10 @@
-import { defineNuxtConfig } from "nuxt";
 export default defineNuxtConfig({
   css: ["vuetify/lib/styles/main.sass", "@/assets/scss/app.scss"],
-  vite: {
-    define: {
-      "process.env.DEBUG": false,
-    },
-  },
+  // vite: {
+  //   define: {
+  //     "process.env.DEBUG": false,
+  //   },
+  // },
   meta: {
     title: "VE NAXUI",
   },
@@ -25,13 +24,12 @@ export default defineNuxtConfig({
   //   buildAssetsDir: "assets/",
   // },
   modules: [
-    [
-      "@pinia/nuxt",
-      {
-        autoImports: ["defineStore", "acceptHMRUpdate"],
-      },
-    ],
-    ,
+    // [
+    //   "@pinia/nuxt",
+    //   {
+    //     autoImports: ["defineStore", "acceptHMRUpdate"],
+    //   },
+    // ],
     "@vueuse/nuxt",
   ],
 
