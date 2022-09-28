@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+
+}
+.container{ 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rating__title{
+    margin: 0px 0px 40px 0px;
+}
+.rating__content {
+    background-color: #131620;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    color: #fff;
+    padding: 43px;
+    border: 2px solid #494A4D;
+    border-radius: 16px;
+}
+.rating__left {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 0px 50px;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+
+}
+.rating__right {
+    padding: 50px;
+}
+
+.pacss__svg {
+    transform: rotate(-90deg);
+}
+
+.pacss__svg circle {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+    stroke: #666;
+    stroke-width: 1em;
+    stroke-linecap: round;
+}
+
+.pacss__svg .pacss__bar {
+    stroke: #1AC836;
+    stroke-dashoffset: 90;
+}
+
+.pacss__wrapper {
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin: 2em;
+    box-shadow: 0 0 1em black;
+    border-radius: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.pacss__wrapper:after {
+    position: absolute;
+    display: block;
+    height: 160px;
+    width: 160px;
+    left: 45%;
+    top: 50%;
+    content: "/ 5";
+    margin-top: -70px;
+    margin-left: -40px;
+    border-radius: 100%;
+    line-height: 160px;
+    font-size: 1.5em;
+    text-shadow: 0 0 0.5em black;
+}
+.pacss__wrapper:before {
+    position: absolute;
+    display: block;
+    height: 160px;
+    width: 160px;
+    left: 45%;
+    top: 50%;
+    content: attr(data-pct);
+    margin-top: -80px;
+    margin-left: -80px;
+    border-radius: 100%;
+    line-height: 160px;
+    font-size: 2em;
+    text-shadow: 0 0 0.5em black;
+}
+.pacss__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pacss__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pacss-excellent {
+    text-align: center;
+}
+
+.pacss-excellent p {
+    font-size: 24px;
+}
+
+.pacss-excellent span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.pacss__item {
+    font-size: 24px;
+}
+
+.pacss__item-rating {
+    text-align: center;
+}
+
+.pacss__item-info {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.pacss {
+    display: block;
+    position: relative;
+    width: 0.5em;
+    height: 1em;
+    overflow: hidden;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    -ms-transform-origin: left center;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+    margin-left: 0.5em;
+}
+
+.pacss.pacss-big:after,
+.pacss:before {
+    content: " ";
+    position: absolute;
+    width: 0.5em;
+    height: 1em;
+    background: #1AC836;
+}
+
+.pacss:before {
+    left: -100%;
+    border-radius: 0.5em 0 0 0.5em;
+    -moz-transform-origin: right center;
+    -o-transform-origin: right center;
+    -ms-transform-origin: right center;
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+}
+
+.pacss.pacss-big {
+    width: 1em;
+    -moz-transform-origin: center center;
+    -o-transform-origin: center center;
+    -ms-transform-origin: center center;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    margin-left: 0;
+}
+
+.pacss.pacss-big:before {
+    left: 0;
+}
+
+.pacss.pacss-big:after {
+    left: 50%;
+    border-radius: 0 0.5em 0.5em 0;
+}
+
+.pacss:before {
+    -moz-transform: rotate(342deg);
+    -o-transform: rotate(342deg);
+    -ms-transform: rotate(342deg);
+    -webkit-transform: rotate(342deg);
+    transform: rotate(342deg);
+}
+
+.pacss-75:before {
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+
+
+.rating__number {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 140px;
+    z-index: 2;
+}
+
+.rating__number:after {
+    content: "/5";
+    font-size: 50%;
+    margin-left: 0.1em;
+}
+
+.rating__side {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.rating__bar {
+    margin-top: 10px;
+}
+
+.rating__line {
+    display: flex;
+    align-items: center;
+}
+
+
+.bar__container {
+    width: 183px;
+    background-color: #595B62;
+    text-align: center;
+    color: white;
+    border-radius: 16px;
+}
+
+.bar__container-5 {
+    width: 95%;
+}
+
+.bar__container-4 {
+    width: 40%;
+}
+
+.bar__container-3 {
+    width: 70%;
+}
+
+.bar__container-2 {
+    width: 7%;
+}
+
+.bar__container-1 {
+    width: 0%;
+}
+
+.bar--root {
+    height: 10px;
+    background-color: #1AC836;
+    border-radius: 16px;
+
+}
+
+
+/* Comments ======================================== */
+
+
+
+.comments {
+}
+.comments__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.comments__add {
+    display: flex;
+    align-items: center;
+}
+.comments__plus {
+    background-color: #000;
+}
+
+.comments__all {
+}
+.all__link {
+}
+
+
+
+
+/* Media ================================================= */
+
+
+@media only screen and (max-width: 767px) {
+    .rating__content {
+        flex-direction: column;
+    }
+
+    .rating__left {
+        padding: 0px 0px 30px 0px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        border-right: none;
+    }
+
+    .rating__right {
+        padding: 30px;
+    }
+
+    .bar__container {
+        width: 300px;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .pacss__wrapper {
+        height: 100px;
+        width: 100px;
+    }
+
+    .pacss__wrapper::before {
+        height: 80px;
+        width: 80px;
+        margin-top: -40px;
+        margin-left: -45px;
+        line-height: 80px;
+        font-size: 24px;
+    }
+    .pacss__wrapper::after {
+        height: 80px;
+        width: 80px;
+        left: 70%;
+        font-size: 19px;
+    }
+    .pacss__svg {
+        width: 100px;
+        height: 100px;
+        transform: rotate(233deg);
+    }
+
+    .pacss__svg circle {
+        stroke-width: 5px;
+        r: 45;
+        cx: 50;
+        cy: 50;
+    }
+
+    .pacss__svg .pacss__bar {
+        stroke-dashoffset: -30;
+    }
+
+    .bar__container {
+        width: 200px;
+    }
+}
