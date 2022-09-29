@@ -24,7 +24,7 @@
           <NuxtLink id="link-list" to="#">Terms</NuxtLink>
         </section>
         <section class="footer__main__right__buttons">
-          <div class="footer__main__right__buttons__add-place"><h5>Add place</h5></div>
+          <v-btn class="footer__main__right__buttons__add-place" height="54px">Add place</v-btn>
           <img src="@/assets/img/gplay.png" alt="google" />
           <img src="@/assets/img/astore.png" alt="appstore" />
         </section>
@@ -42,7 +42,6 @@
   max-width: 100%;
   background-color: #131620;
   color: #fff;
-  gap: 48px;
   padding: 34px 20px 18px 20px;
   & h4 {
     font-weight: 400;
@@ -69,9 +68,15 @@
         align-items: center;
         gap: 60px;
         margin-bottom: 42px;
+        cursor: pointer;
+
         & img {
           object-fit: contain;
           max-height: 30px;
+          &:hover {
+            transition: 0.2s;
+            opacity: 0.4;
+          }
         }
         &__chat {
           padding: 14px 14px 13px 13px;
@@ -79,14 +84,30 @@
           background-color: #38405f;
           max-height: 52px;
           display: flex;
+          &:hover {
+            transition: 0.2s;
+            opacity: 0.4;
+          }
         }
       }
       &__mail {
         order: 3;
+
         display: flex;
         gap: 33.6px;
+        cursor: pointer;
+        & h4 {
+          &:hover {
+            transition: 0.2s;
+            opacity: 0.4;
+          }
+        }
         & img {
           object-fit: contain;
+          &:hover {
+            transition: 0.2s;
+            opacity: 0.4;
+          }
         }
       }
     }
@@ -97,7 +118,6 @@
         gap: 32px;
         margin-bottom: 41px;
         margin-top: 10px;
-        white-space: nowrap;
       }
       &__buttons {
         display: grid;
@@ -108,10 +128,15 @@
           background: #38405f;
           border-radius: 8px;
           width: 180px;
-          padding-top: 16px;
-          padding-bottom: 16px;
-          & h5 {
-            font-weight: 600;
+          color: #fff;
+          font-weight: 600;
+          cursor: pointer;
+        }
+        & img {
+          cursor: pointer;
+          &:hover {
+            transition: 0.2s;
+            opacity: 0.7;
           }
         }
       }
@@ -119,6 +144,7 @@
   }
   &__under {
     display: flex;
+    text-align: center;
     gap: 8px;
     flex-direction: column;
     align-items: center;
@@ -127,9 +153,14 @@
 }
 #link-list {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   text-decoration: none;
   color: white;
+  cursor: pointer;
+  &:hover {
+    transition: 0.2s;
+    opacity: 0.4;
+  }
 }
 @media screen and (max-width: 1080px) {
   .footer {
@@ -159,18 +190,15 @@
           gap: 16px;
           &__add-place {
             grid-column: 1 / -1;
-            width: 70%;
-          }
-          & img {
-            width: 100%;
+            width: 66%;
           }
         }
       }
     }
   }
   #link-list {
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 300;
+    font-size: 18px;
     text-decoration: none;
     color: white;
   }
@@ -179,6 +207,33 @@
   .footer {
     &__main {
       flex-direction: column;
+      &__left {
+        &__logos {
+          justify-content: space-around;
+        }
+        &__mail {
+          h4 {
+            font-size: 16px;
+            font-weight: 400;
+          }
+        }
+      }
+      &__right {
+        &__links {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+        &__buttons {
+          grid-template-columns: repeat(2, 1fr);
+          justify-items: center;
+          gap: 0;
+          grid-row-gap: 35px;
+
+          & img {
+            width: 180px;
+          }
+        }
+      }
     }
   }
 }
@@ -193,7 +248,10 @@
           justify-content: space-between;
         }
         &__mail {
-          gap: 17px;
+          gap: 0;
+          img {
+            height: 20px;
+          }
         }
       }
       &__right {
