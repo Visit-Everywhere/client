@@ -2,44 +2,44 @@
   <div class="order">
     <div class="order__list">
       <ul class="order__list__food">
-        <li v-for="restaurants in restaurants">{{ restaurants.restaurant }}</li>
+        <li v-for="someMenu in menuList" :key="index">
+          <button @click="filterFood">{{ someMenu }}</button>
+        </li>
       </ul>
     </div>
     <div class="order__price">
-      <MoleculesFood sale-mark />
-      <MoleculesFood />
-      <MoleculesFood sale-mark />
-      <MoleculesFood />
-      <MoleculesFood />
-      <MoleculesFood />
+      <MoleculesFood v-bind="food" v-for="(food, index) in filterFood" :key="`${index}`" />
     </div>
   </div>
 </template>
-
 <script setup>
-const props = defineProps({
-  restaurants: {
-    type: Array,
-    default: [
-      { restaurant: "Lorem ipsum" },
-      { restaurant: "Lorem ipsum" },
-      { restaurant: "Lorem ipsum" },
-      { restaurant: "Lorem ipsum" },
-      { restaurant: "Lorem ipsum" },
-      { restaurant: "Lorem ipsum" },
-      { restaurant: "Lorem ipsum" },
-      { restaurant: "Lorem ipsum" },
-      { restaurant: "Lorem ipsum" },
-      { restaurant: "Lorem ipsum" },
-    ],
-  },
+import { CartState } from "~/stores/cart";
+const { selected, addItemToSelected, removeItemFromSelected } = CartState();
+onMounted(async () => {
+  console.log(selected);
+  await addItemToSelected(123123, 1233, 154352);
+  await removeItemFromSelected(1233, 123123);
 });
+const menuList = ["Горячаяя еда", "Бургеры"];
+const menuFood = [
+  { foodId: "Горячаяя еда", id: "1" },
+  { foodId: "Горячаяя еда", id: "1" },
+  { foodId: "Горячаяя еда", id: "1" },
+  { foodId: "Горячаяя еда", id: "1" },
+  { foodId: "Горячаяя еда", id: "1" },
+  { foodId: "Бургеры", id: "2" },
+  { foodId: "Бургеры", id: "2" },
+  { foodId: "Горячаяя еда", id: "1" },
+  { foodId: "Бургеры", id: "2" },
+];
+const filteredMenu = [];
+const filterFood = menuFood.filter((food) => food.id === "1");
+filteredMenu.push(...filterFood);
 </script>
-
 <style lang="scss" scoped>
 .order {
   background: #131620;
-  width: 600px;
+  width: 100%;
   top: 269px;
   border-radius: 16px;
   display: flex;
@@ -62,7 +62,7 @@ const props = defineProps({
     }
   }
   &__price {
-    width: 419px;
+    width: 100%;
     height: 508px;
     display: grid;
     grid-column-gap: 36px;

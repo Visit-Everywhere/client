@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "codeSTACKr Theme",
+  "workbench.colorTheme": "Default Dark+",
   "workbench.iconTheme": "vs-seti",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
@@ -9,5 +9,6 @@
   "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
   "editor.formatOnSave": true,
-  "prettier.printWidth": 200
+  "prettier.printWidth": 200,
+  "vue3snippets.enable-compile-vue-file-on-did-save-code": false
 }
