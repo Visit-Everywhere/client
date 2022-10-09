@@ -1,5 +1,13 @@
-import { defineNuxtConfig } from "nuxt";
 export default defineNuxtConfig({
+<<<<<<< HEAD
+=======
+  css: ["vuetify/lib/styles/main.sass", "@/assets/scss/app.scss"],
+  // vite: {
+  //   define: {
+  //     "process.env.DEBUG": false,
+  //   },
+  // },
+>>>>>>> c6a0779 (nikita lox)
   meta: {
     title: "VE NAXUI",
   },
@@ -13,6 +21,7 @@ export default defineNuxtConfig({
   //   },
   // },
   // buildModules: ["vue-sticky-element"],
+<<<<<<< HEAD
   vue: {
     compilerOptions: {
       directiveTransforms: {
@@ -28,6 +37,21 @@ export default defineNuxtConfig({
     buildAssetsDir: "assets/",
   },
   modules: ["@pinia/nuxt", "@vueuse/nuxt"],
+=======
+
+  // app: {
+  //   buildAssetsDir: "assets/",
+  // },
+  modules: [
+    // [
+    //   "@pinia/nuxt",
+    //   {
+    //     autoImports: ["defineStore", "acceptHMRUpdate"],
+    //   },
+    // ],
+    "@vueuse/nuxt",
+  ],
+>>>>>>> c6a0779 (nikita lox)
 
   css: ["@/assets/scss/app.scss"],
   // styleResources: {
