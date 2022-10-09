@@ -4,6 +4,7 @@
       <div class="header-left">
         <img src="assets/LOGO.png" alt="VE" class="header-logo" />
       </div>
+      <v-select :items="items" variant="plain" label="Plain variant"></v-select>
       <div class="header-city">Kyiv</div>
       <nav class="header-nav">
         <a href="" class="header-nav-link">Filters</a>
@@ -20,6 +21,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    items: ["Foo", "Bar", "Fizz", "Buzz"],
+  }),
+};
+</script>
 
 <style lang="scss" scoped>
 .header {
