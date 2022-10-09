@@ -1,11 +1,11 @@
 <template>
-  <!-- <OrganismsNavbar />
-  <MoleculesSearch />
+  <OrganismsNavbar />
+  <!-- <MoleculesSearch />
   <OrganismsChooser />
   <OrganismsPopular />
   <OrganismsBest />
   <OrganismsFooter /> -->
-  <OrganismsOrderingFood />
+  <!-- <OrganismsOrderingFood /> -->
 </template>
 
 <script setup></script>
