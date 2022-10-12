@@ -69,6 +69,7 @@
         gap: 60px;
         margin-bottom: 42px;
         cursor: pointer;
+
         & img {
           object-fit: contain;
           max-height: 30px;
@@ -91,6 +92,7 @@
       }
       &__mail {
         order: 3;
+
         display: flex;
         gap: 33.6px;
         cursor: pointer;
@@ -226,6 +228,7 @@
           justify-items: center;
           gap: 0;
           grid-row-gap: 35px;
+
           & img {
             width: 180px;
           }
