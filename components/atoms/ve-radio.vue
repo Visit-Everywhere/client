@@ -5,10 +5,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "veRadio",
-  props: {
+<script setup>
+const props = defineProps({
     value: {
       type: String,
       default: "",
@@ -29,8 +27,7 @@ export default {
       type: String,
       default: "",
     },
-  },
-};
+});
 </script>
 
 <style lang="scss" scoped>

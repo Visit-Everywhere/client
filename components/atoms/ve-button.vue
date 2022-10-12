@@ -4,10 +4,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "veButton",
-  props: {
+<script setup>
+const props = defineProps({
     buttonWith: {
       type: String,
       default: "160px",
@@ -16,8 +14,7 @@ export default {
       type: String,
       default: "",
     },
-  },
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -70,3 +70,4 @@ export default defineNuxtConfig({
   },
   // plugins: ['@/plugins/flowbite.client.ts'],
 });
+

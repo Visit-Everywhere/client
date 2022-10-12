@@ -1,12 +1,13 @@
 <template>
   <div class="component-container">
     <input class="component-container__input" :type="inputType" @input="$emit('update:modelValue', $event.target.value)" :placeholder="inputPlaceholder" :style="{ maxWidth: inputWidth }" />
+    
   </div>
 </template>
-<script>
-export default {
-  name: "uiInput",
-  props: {
+<script setup>
+
+
+const props = defineProps({
     inputPlaceholder: {
       type: String,
       default: "enter the message",
@@ -27,8 +28,8 @@ export default {
       type: String,
       default: "text",
     },
-  },
-};
+});
+
 </script>
 <style lang="scss" scoped>
 .component-container {

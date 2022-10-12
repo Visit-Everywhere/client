@@ -3,8 +3,13 @@
     <h1 class="login-container__header">Login</h1>
     <form class="login-container__form">
       <div class="login-container__form__inputs">
-        <AtomsVeInput inputPlaceholder="Email or phone" v-model="emailOrPhone" />
-        <AtomsVeInput inputPlaceholder="Password" v-model="password" inputType="password" />
+        <v-form ref="form" v-model="valid" lazy-validation />
+        <v-text-field v-model="email" :counter="10" :rules="emailRules" label="E-mail" required>
+          <AtomsVeInput inputPlaceholder="Email or phone"  />
+        </v-text-field>
+        <v-text-field v-model="password" :rules="passwordRules" label="Password" required>
+          <AtomsVeInput inputPlaceholder="Password"  inputType="password" /> 
+        </v-text-field>
       </div>
       <AtomsVeCheckbox checkboxLabel="Stay authorized" class="login-container__form__checkbox" v-model="checkboxValue" veCheckboxId="stay" />
       <AtomsVeButton buttonValue="Login" class="login-container__form__button" />
@@ -25,15 +30,20 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      emailOrPhone: "",
-      password: "",
-    };
-  },
-};
+<script setup>
+  let valid = ref(true)
+  let password = ref('')
+  let passwordRules = [
+    v => !!v || 'Password is required',
+    v => (v && v.length  <= 20 && v.lenght > 6 ) || 'Password must be more than 6 characters and less than 20 characters '
+  ]
+  let email = ref('')
+  let emailRules = [
+    v => !!v || 'E-mail is required',
+    v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+  ]
+
+
 </script>
 
 <style lang="scss" scoped>
