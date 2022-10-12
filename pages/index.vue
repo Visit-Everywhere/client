@@ -1,20 +1,5 @@
 <template>
-  <div>
-    <OrganismsFooter />
-  </div>
+  <OrganismsRestorePasswordCreate />
 </template>
 
-<style lang="scss">
-.relative {
-  position: relative;
-}
-</style>
-
-<script>
-export default {
-  data: () => ({
-    c1: "#ff00ff",
-    c2: "#00ff00",
-  }),
-};
-</script>
+<style lang="scss"></style>
