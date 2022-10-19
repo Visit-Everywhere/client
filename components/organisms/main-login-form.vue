@@ -25,15 +25,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      emailOrPhone: "",
-      password: "",
-    };
-  },
-};
+<script setup>
+  let emailOrPhone = ref("")
+  let password = ref("")
 </script>
 
 <style lang="scss" scoped>

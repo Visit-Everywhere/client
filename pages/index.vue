@@ -1,5 +1,6 @@
 <template>
-  <OrganismsRestorePasswordCreate />
+  <OrganismsMainLoginForm />
+  <!-- <OrganismsTest/> -->
 </template>
 
 <style lang="scss"></style>

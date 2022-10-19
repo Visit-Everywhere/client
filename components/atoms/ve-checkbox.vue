@@ -5,11 +5,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "veCheckbox",
-  props: {
-    checkboxLabel: {
+<script setup>
+const props = defineProps({
+  checkboxLabel: {
       type: String,
       default: "",
     },
@@ -33,8 +31,7 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-};
+});
 </script>
 
 <style lang="scss" scoped>
