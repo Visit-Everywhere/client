@@ -1,5 +1,8 @@
 <template>
-  <OrganismsMainLoginForm />
+  <!-- <OrganismsRestorePasswordEmail/> -->
+  <!-- <OrganismsRecieve-mail/> -->
+  <OrganismsMainRegistrationForm />
+  <!-- <OrganismsMainLoginForm/> -->
   <!-- <OrganismsTest/> -->
 </template>
 

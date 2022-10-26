@@ -5,8 +5,13 @@
       <h5>Enter the 6-digit code you received.</h5>
     </span>
     <form>
-      <AtomsVeInput class="form-container__input" inputPlaceholder="Code" />
-      <AtomsVeButton class="form-container__button" buttonValue="Restore" />
+      <v-text-field
+        label="Code"
+        :rules="rules"
+        hide-details="auto"
+        class="form-container__input"
+      ></v-text-field>
+      <v-btn  height="56px"   rounded="pill" color="#38405F"  class="form-container__button" >Restore</v-btn>
     </form>
   </div>
 </template>
@@ -34,9 +39,18 @@
     margin-top: 16px;
   }
   &__input {
+    color: #808080;
     margin: 40px 0 48px 0;
   }
   &__button {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+
+    display: flex;
+    padding: 16px 47px;
+    max-width: 180px;
+    color: #fff;
     margin: 0 auto;
   }
 }

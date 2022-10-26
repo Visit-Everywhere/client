@@ -5,8 +5,14 @@
       <h5>Write your phone number or email from the account</h5>
     </span>
     <form>
-      <AtomsVeInput class="form-container__input" inputPlaceholder="Email or phone" />
-      <AtomsVeButton class="form-container__button" buttonValue="Next" />
+      <v-text-field
+        label="Email"
+        :rules="rules"
+        hide-details="auto"
+        class="form-container__input"
+        type="email"
+      ></v-text-field>
+      <v-btn  height="56px"   rounded="pill" color="#38405F"  class="form-container__button" >Next</v-btn>
     </form>
   </div>
 </template>
@@ -34,9 +40,19 @@
     margin-top: 16px;
   }
   &__input {
+    color: #808080;
     margin: 40px 0 48px 0;
   }
   &__button {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 16px 47px;
+
+    display: flex;
+    color: #FFFFFF;
+    max-width: 180px;
+    margin: 0 auto;
     margin: 0 auto;
   }
 }

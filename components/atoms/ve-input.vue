@@ -2,7 +2,6 @@
   <div class="component-container">
     <input class="component-container__input" :type="inputType" @input="$emit('update:modelValue', $event.target.value)" :placeholder="inputPlaceholder" :style="{ maxWidth: inputWidth }" />
   </div>
-  <v-btn>text</v-btn>
 </template>
 <script setup>
 

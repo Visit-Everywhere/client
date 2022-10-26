@@ -6,30 +6,57 @@
     </div>
     <form class="registration-container__form">
       <div class="registration-container__form__top-inputs">
-        <AtomsVeInput inputPlaceholder="Full Name" />
-        <AtomsVeInput inputPlaceholder="Email" />
-        <AtomsVeInput inputPlaceholder="Phone number" />
+        <v-text-field
+          label="Full name"
+          :rules="rules"
+          hide-details="auto"
+        ></v-text-field>
+        <v-text-field
+          label="Email"
+          :rules="rules"
+          hide-details="auto"
+        ></v-text-field>
+        <v-text-field
+          label="Phone number"
+          :rules="rules"
+          hide-details="auto"
+        ></v-text-field>
       </div>
       <div class="registration-container__form__sex">
-        <h4>Sex:</h4>
+        <h4>Gender:</h4>
         <div class="registration-container__form__sex__radios">
-          <AtomsVeRadio radioName="sex" radioLabel="Male" />
-          <AtomsVeRadio radioName="sex" radioLabel="Female" />
+          <AtomsVeRadio radioName="sex" radioLabel="Man" />
+          <AtomsVeRadio radioName="sex" radioLabel="Other" />
         </div>
       </div>
       <div class="registration-container__form__bottom-inputs">
-        <AtomsVeInput inputPlaceholder="Birthday" />
-        <AtomsVeInput inputPlaceholder="Password" inputType="password" />
-        <AtomsVeInput inputPlaceholder="Confirm password" inputType="password" />
+        <v-text-field
+          label="Birthday"
+          :rules="rules"
+          hide-details="auto"
+        ></v-text-field>
+        <v-text-field
+          label="Password"
+          :rules="rules"
+          hide-details="auto"
+          type="password"
+        ></v-text-field>
+        <v-text-field
+          label="Confirm password"
+          :rules="rules"
+          hide-details="auto"
+          type="password"
+        ></v-text-field>
       </div>
       <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to recieve a newsletter to my email." alignText="center" isChecked="true" />
-      <AtomsVeButton buttonValue="Create account" buttonWith="220px" class="registration-container__form__button" />
+      <v-btn  height="56px"  rounded="pill" color="#38405F"  class="registration-container__form__button">Create an account</v-btn> 
     </form>
     <div class="registration-container__continue">
       <h4>or continue with:</h4>
       <div class="registration-container__continue__icons">
         <img src="@/assets/img/google-icon.svg" alt="google" />
-        <img src="@/assets/img/apple-icon.svg" alt="apple" />
+        <nuxt-link to="https://i.pinimg.com/originals/24/f1/f5/24f1f54f147a70157d56180b5192f6df.jpg"><img src="@/assets/img/apple-icon.svg" alt="apple" /></nuxt-link>
+        
       </div>
     </div>
   </div>
@@ -62,6 +89,7 @@
     gap: 25px;
     flex-direction: column;
     &__top-inputs {
+      color: #808080;
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -81,11 +109,16 @@
       }
     }
     &__bottom-inputs {
+      color: #808080;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 10px;
     }
     &__button {
+      padding: 16px 47px;
+      display: flex;
+      color: #d4d4d5;
+      max-width: 220px;
       margin: 0 auto;
     }
   }

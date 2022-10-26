@@ -3,11 +3,20 @@
     <h1 class="login-container__header">Login</h1>
     <form class="login-container__form">
       <div class="login-container__form__inputs">
-        <AtomsVeInput inputPlaceholder="Email or phone" v-model="emailOrPhone" />
-        <AtomsVeInput inputPlaceholder="Password" v-model="password" inputType="password" />
+        <v-text-field
+          label="Email"
+          v-model="email"
+          class="main-input"
+        ></v-text-field>
+        <v-text-field
+          label="Password"
+          v-model="password"
+        ></v-text-field>
       </div>
       <AtomsVeCheckbox checkboxLabel="Stay authorized" class="login-container__form__checkbox" v-model="checkboxValue" veCheckboxId="stay" />
-      <AtomsVeButton buttonValue="Login" class="login-container__form__button" />
+      <div class="btn-login">
+        <v-btn  class="login-container__form__button" height="56px"  rounded="pill" color="#38405F" block>Login</v-btn>
+      </div>
     </form>
     <div class="login-container__under-form">
       <div class="login-container__under-form__continue">
@@ -26,7 +35,8 @@
 </template>
 
 <script setup>
-  let emailOrPhone = ref("")
+  
+  let email = ref("")
   let password = ref("")
 </script>
 
@@ -46,14 +56,18 @@
   &__form {
     margin: 88px 0 31px 0;
     &__inputs {
+      
+      color: #808080;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+
     }
     &__checkbox {
       margin: 24px 0 32px 0;
     }
     &__button {
+      color: #d4d4d5;
+      max-width: 180px;
       margin: 0 auto;
     }
   }
