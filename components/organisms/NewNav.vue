@@ -2,28 +2,29 @@
   <header class="header" :class="{ 'scrolled-nav': scrollPosition }">
     <nav class="nav">
       <div class="nav__branding">
-        <img class="nav__branding__img" src="@/assets/img/LOGO-trans 2.png" />
+        <a href="/"><img class="nav__branding__img" src="@/assets/img/LOGO-trans 2.png" /></a>
       </div>
       <div class="chooser">
         <v-select :items="['Kyiv']" variant="underlined" density="comfortable"></v-select>
         <img class="chooser__arrow" src="@/assets/img/arrow.png" />
       </div>
-      <ul v-show="!mobile" class="navigation">
+      <ul class="navigation">
         <li><router-link class="navigation__link" :to="{ name: '' }">Filter</router-link></li>
         <li><router-link class="navigation__link" :to="{ name: '' }">Events</router-link></li>
         <li><router-link class="navigation__link" :to="{ name: '' }">Discounts</router-link></li>
       </ul>
-      <div v-show="!mobile">
-        <v-select :items="['En', 'Ua']" variant="underlined" density="comfortable"></v-select>
-      </div>
-      <div v-show="!mobile">
-        <NuxtLink to="/login" class="navigation__login">Sign in</NuxtLink>
+      <div class="navigation__right">
+        <div class="navigation__right__chooser">
+          <v-select class="navigation__right__chooser__lang" :items="['En', 'Ua']" variant="underlined" density="comfortable"></v-select>
+          <img class="navigation__right__chooser__arrow" src="@/assets/img/arrow.png" />
+        </div>
+        <NuxtLink to="/login" class="navigation__right__login">Sign in</NuxtLink>
       </div>
       <div class="icon">
-        <img src="@/assets/img/Vector.png" @click="toggleMobileNav" v-show="mobile" :class="{ 'icon-active': mobileNav }" />
+        <img src="@/assets/img/Vector.png" @click="toggleMobileNav" :class="{ 'icon-active': mobileNav }" />
       </div>
       <transition name="mobile-nav">
-        <ul v-show="mobileNav == true" class="dropdown-nav">
+        <ul v-if="mobileNav" class="dropdown-nav">
           <li class="dropdown-nav__close" @click="toggleMobileNav"><img src="@/assets/img/close_btn.png" /></li>
           <li class="dropdown-nav__chooser">
             <img class="dropdown-nav__arrow" src="@/assets/img/arrow.png" />
@@ -32,48 +33,18 @@
           <li><router-link class="navigation__link" :to="{ name: '' }">Filter</router-link></li>
           <li><router-link class="navigation__link" :to="{ name: '' }">Events</router-link></li>
           <li><router-link class="navigation__link" :to="{ name: '' }">Discounts</router-link></li>
-          <li class="login__btn"><button v-show="mobileNav">Login</button></li>
+          <li class="dropdown-nav__login"><button v-if="mobileNav">Login</button></li>
         </ul>
       </transition>
     </nav>
   </header>
 </template>
 
-<script>
-export default {
-  name: "nvigation",
-  data() {
-    return {
-      scrollPosition: null,
-      mobile: null,
-      mobileNav: null,
-      windowWidth: null,
-    };
-  },
-  methods: {
-    toggleMobileNav() {
-      this.mobileNav = !this.mobileNav;
-    },
-    checkScreen() {
-      if (process.browser) {
-        this.windowWidth = window.innerWidth;
-        if (this.windowWidth <= 678) {
-          this.mobile = true;
-          return;
-        }
-        this.mobile = false;
-        this.mobileNav = false;
-        return;
-      }
-      console.log(checkScreen());
-    },
-    created() {
-      if (process.browser) {
-        window.addEventListener("resize", this.checkScreen);
-        this.checkScreen();
-      }
-    },
-  },
+<script setup>
+let mobileNav = ref(false);
+
+const toggleMobileNav = () => {
+  mobileNav.value = !mobileNav.value;
 };
 </script>
 
@@ -84,6 +55,7 @@ export default {
   width: 100%;
   transition: 0.5s ease all;
   color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   nav {
     display: flex;
     flex-direction: row;
@@ -94,7 +66,7 @@ export default {
     align-items: center;
     ul,
     .link {
-      font-weight: 500;
+      font-weight: 400;
       color: white;
       list-style: none;
       text-decoration: none;
@@ -127,6 +99,50 @@ export default {
   align-items: center;
   flex: 1;
   justify-content: center;
+  opacity: 0.6;
+  &__right {
+    display: inline-block;
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+    &__chooser {
+      position: relative;
+      float: left;
+      display: block;
+      &__lang {
+        max-width: 25px;
+        min-width: 25px;
+        float: left;
+        margin-right: 20px;
+      }
+      &__arrow {
+        position: absolute;
+        top: 35px;
+        right: 55px;
+      }
+      &__arrow:hover {
+        transform: rotate(-90deg);
+        transition: 0.8s ease all;
+      }
+    }
+    &__login {
+      float: left;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 14px 55px;
+      border-radius: 32px;
+      background-color: #38405f;
+      color: #fff;
+      outline: none;
+      cursor: pointer;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: 0.3s ease all;
+      &:hover {
+        border: 2px solid #fff;
+      }
+    }
+  }
   &__link {
     font-size: 24px;
     transition: 0.5s ease all;
@@ -137,22 +153,6 @@ export default {
     text-decoration: none;
     &:hover {
       color: #eab52e;
-    }
-  }
-  &__login {
-    padding-left: 30px;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 14px 55px;
-    border-radius: 32px;
-    background-color: #38405f;
-    color: #fff;
-    outline: none;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: 0.3s ease all;
-    &:hover {
-      border: 2px solid #fff;
     }
   }
 }
@@ -186,7 +186,6 @@ export default {
     position: absolute;
     top: 45px;
     left: -5px;
-    cursor: pointer;
   }
   &__arrow:hover {
     transition: 0.8s ease all;
@@ -205,6 +204,32 @@ export default {
     padding-top: 13px !important;
     cursor: pointer;
   }
+  &__login {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 60px;
+    width: 90%;
+    margin-bottom: auto;
+    margin-bottom: 0 auto;
+    position: relative;
+    // top: 510px;
+    text-align: center;
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 14px 55px;
+    border-radius: 32px;
+    background-color: #38405f;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s ease all;
+    &:hover {
+      border: 2px solid #fff;
+    }
+  }
 
   li {
     margin-right: 0;
@@ -218,48 +243,69 @@ export default {
 }
 
 .chooser {
-  margin: 0 auto;
-  min-width: 10px;
+  position: relative;
+  margin-left: 20px;
+  min-width: 30px;
   max-width: 35px;
   display: flex;
   justify-content: center;
   &__arrow {
     position: absolute;
-    top: 58px;
-    left: 1000px;
-    cursor: pointer;
+    top: 35px;
+    left: 40px;
   }
   &__arrow:hover {
     transition: 0.8s ease all;
     transform: rotate(90deg);
   }
 }
-.login__btn {
-  position: absolute;
-  height: 60px;
-  width: 90%;
-  margin: 0 auto;
-  position: relative;
-  top: 510px;
-  text-align: center;
-  padding-left: 30px;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 14px 55px;
-  border-radius: 32px;
-  background-color: #38405f;
-  color: #fff;
-  outline: none;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: 0.3s ease all;
-  &:hover {
-    border: 2px solid #fff;
-  }
-}
-@media screen and (max-with: 1140px) {
+@media screen and (max-width: 1140px) {
   html {
     max-width: 1140px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .navigation,
+  .navigation__right__chooser__lang,
+  .navigation__right__chooser__arrow,
+  .navigation__right__login {
+    display: none;
+  }
+  .chooser {
+    align-items: center;
+    position: relative;
+  }
+}
+@media screen and (min-width: 750px) {
+  .icon {
+    display: none;
+  }
+}
+@media screen and (max-width: 1650px) {
+  .navigation__right {
+    display: flex;
+    justify-content: center;
+    &__lang {
+      width: 50px;
+    }
+  }
+}
+@media screen and (max-width: 750px) {
+  .chooser {
+    margin-left: 90px;
+  }
+}
+@media screen and (max-width: 1075px) {
+  .navigation__right__chooser__arrow,
+  .navigation__right__chooser__lang {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .navigation__right__login {
+    // width: 40px;
+    // height: 60px;
+    padding: 0;
   }
 }
 </style>
