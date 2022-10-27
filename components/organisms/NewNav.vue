@@ -5,17 +5,17 @@
         <a href="/"><img class="nav__branding__img" src="@/assets/img/LOGO-trans 2.png" /></a>
       </div>
       <div class="chooser">
-        <v-select :items="['Kyiv']" variant="underlined" density="comfortable"></v-select>
+        <v-select :items="['Kyiv']" variant="plain" density="comfortable"></v-select>
         <img class="chooser__arrow" src="@/assets/img/arrow.png" />
       </div>
       <ul class="navigation">
-        <li><router-link class="navigation__link" :to="{ name: '' }">Filter</router-link></li>
-        <li><router-link class="navigation__link" :to="{ name: '' }">Events</router-link></li>
-        <li><router-link class="navigation__link" :to="{ name: '' }">Discounts</router-link></li>
+        <li><NuxtLink class="navigation__link" :to="{ name: '' }">Filter</NuxtLink></li>
+        <li><NuxtLink class="navigation__link" :to="{ name: '' }">Events</NuxtLink></li>
+        <li><NuxtLink class="navigation__link" :to="{ name: '' }">Discounts</NuxtLink></li>
       </ul>
       <div class="navigation__right">
         <div class="navigation__right__chooser">
-          <v-select class="navigation__right__chooser__lang" :items="['En', 'Ua']" variant="underlined" density="comfortable"></v-select>
+          <v-select class="navigation__right__chooser__lang" :items="['En', 'Ua']" variant="plain" density="comfortable"></v-select>
           <img class="navigation__right__chooser__arrow" src="@/assets/img/arrow.png" />
         </div>
         <NuxtLink to="/login" class="navigation__right__login">Sign in</NuxtLink>
@@ -28,11 +28,11 @@
           <li class="dropdown-nav__close" @click="toggleMobileNav"><img src="@/assets/img/close_btn.png" /></li>
           <li class="dropdown-nav__chooser">
             <img class="dropdown-nav__arrow" src="@/assets/img/arrow.png" />
-            <v-select :items="['En', 'Ua']" variant="underlined" density="comfortable"></v-select>
+            <v-select :items="['En', 'Ua']" variant="plain" density="comfortable"></v-select>
           </li>
-          <li><router-link class="navigation__link" :to="{ name: '' }">Filter</router-link></li>
-          <li><router-link class="navigation__link" :to="{ name: '' }">Events</router-link></li>
-          <li><router-link class="navigation__link" :to="{ name: '' }">Discounts</router-link></li>
+          <li><NuxtLink class="navigation__link" :to="{ name: '' }">Filter</NuxtLink></li>
+          <li><NuxtLink class="navigation__link" :to="{ name: '' }">Events</NuxtLink></li>
+          <li><NuxtLink class="navigation__link" :to="{ name: '' }">Discounts</NuxtLink></li>
           <li class="dropdown-nav__login"><button v-if="mobileNav">Login</button></li>
         </ul>
       </transition>
@@ -50,19 +50,21 @@ const toggleMobileNav = () => {
 
 <style lang="scss" scoped>
 .header {
+  display: flex;
   background-color: #252525;
   z-index: 99;
   width: 100%;
   transition: 0.5s ease all;
   color: white;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: center;
   nav {
     display: flex;
     flex-direction: row;
     padding: 12px 0;
     transition: 0.5s ease all;
     width: 70%;
-    margin: 0 auto;
+    // margin: 0 auto;
     align-items: center;
     ul,
     .link {
@@ -126,6 +128,7 @@ const toggleMobileNav = () => {
       }
     }
     &__login {
+      display: flex;
       float: left;
       font-size: 20px;
       font-weight: 600;
@@ -134,12 +137,16 @@ const toggleMobileNav = () => {
       background-color: #38405f;
       color: #fff;
       outline: none;
+      flex-basis: auto;
       cursor: pointer;
       text-decoration: none;
       border: 2px solid transparent;
       transition: 0.3s ease all;
       &:hover {
         border: 2px solid #fff;
+      }
+      &:after {
+        height: 100px;
       }
     }
   }
