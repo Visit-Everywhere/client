@@ -1,8 +1,8 @@
-import axios from "axios";
+const axios = require("axios").default;
 
 const instance = axios.create({
-    baseURL:'http://localhost:5000/',
-    withCredentials: true,
-    headers:{accept:'aplication/json'}
-})
-export default instance
+  baseURL: "http://localhost:5000/",
+  withCredentials: true,
+  headers: { accept: "aplication/json" },
+});
+module.exports(instance);
