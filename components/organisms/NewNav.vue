@@ -5,7 +5,7 @@
         <a href="/"><img class="nav__branding__img" src="@/assets/img/LOGO-trans 2.png" /></a>
       </div>
       <div class="chooser">
-        <v-select :items="['Kyiv']" variant="plain" density="comfortable" value="City"></v-select>
+        <v-select :items="['Kyiv', 'sdgfsdgfsgfdgfdg']" variant="plain" density="comfortable" value="City"></v-select>
         <img class="chooser__arrow" src="@/assets/img/arrow.png" />
       </div>
       <ul class="navigation">
@@ -243,8 +243,8 @@ const toggleMobileNav = () => {
     margin-right: 0;
   }
   &__chooser {
-    min-width: 100px;
-    max-width: 100px;
+    min-width: 130px;
+    max-width: 130px;
     position: relative;
     margin-left: 35px !important;
   }
@@ -254,7 +254,7 @@ const toggleMobileNav = () => {
   position: relative;
   margin-left: 20px;
   min-width: 100px;
-  max-width: 100px;
+  max-width: 150px;
   display: flex;
   justify-content: center;
   &__arrow {
@@ -299,9 +299,6 @@ const toggleMobileNav = () => {
   }
 }
 @media screen and (max-width: 750px) {
-  .chooser {
-    margin-left: 50px;
-  }
 }
 @media screen and (max-width: 1075px) {
   .navigation__right__chooser__arrow,
