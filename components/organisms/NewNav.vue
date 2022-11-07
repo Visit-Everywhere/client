@@ -5,7 +5,7 @@
         <a href="/"><img class="nav__branding__img" src="@/assets/img/LOGO-trans 2.png" /></a>
       </div>
       <div class="chooser">
-        <v-select :items="['Kyiv']" variant="plain" density="comfortable"></v-select>
+        <v-select :items="['Kyiv']" variant="plain" density="comfortable" value="City"></v-select>
         <img class="chooser__arrow" src="@/assets/img/arrow.png" />
       </div>
       <ul class="navigation">
@@ -15,7 +15,7 @@
       </ul>
       <div class="navigation__right">
         <div class="navigation__right__chooser">
-          <v-select class="navigation__right__chooser__lang" :items="['En', 'Ua']" variant="plain" density="comfortable"></v-select>
+          <v-select value="Lang" class="navigation__right__chooser__lang" :items="['En', 'Ua']" variant="plain" density="comfortable"></v-select>
           <img class="navigation__right__chooser__arrow" src="@/assets/img/arrow.png" />
         </div>
         <NuxtLink to="/login" class="navigation__right__login">Sign in</NuxtLink>
@@ -28,7 +28,7 @@
           <li class="dropdown-nav__close" @click="toggleMobileNav"><img src="@/assets/img/close_btn.png" /></li>
           <li class="dropdown-nav__chooser">
             <img class="dropdown-nav__arrow" src="@/assets/img/arrow.png" />
-            <v-select :items="['En', 'Ua']" variant="plain" density="comfortable"></v-select>
+            <v-select :items="['En', 'Ua']" variant="plain" density="comfortable" value="Lang"></v-select>
           </li>
           <li><NuxtLink class="navigation__link" :to="{ name: '' }">Filter</NuxtLink></li>
           <li><NuxtLink class="navigation__link" :to="{ name: '' }">Events</NuxtLink></li>
@@ -104,7 +104,7 @@ const toggleMobileNav = () => {
   opacity: 0.6;
   &__right {
     display: inline-block;
-    width: 20%;
+    width: 25%;
     margin: 0 auto;
     text-align: center;
     &__chooser {
@@ -112,15 +112,15 @@ const toggleMobileNav = () => {
       float: left;
       display: block;
       &__lang {
-        max-width: 25px;
-        min-width: 25px;
+        max-width: 95px;
+        min-width: 95px;
         float: left;
         margin-right: 20px;
       }
       &__arrow {
         position: absolute;
         top: 35px;
-        right: 55px;
+        right: 128px;
       }
       &__arrow:hover {
         transform: rotate(-90deg);
@@ -163,6 +163,7 @@ const toggleMobileNav = () => {
     }
   }
 }
+
 .icon {
   display: flex;
   align-items: center;
@@ -184,14 +185,14 @@ const toggleMobileNav = () => {
   flex-direction: column;
   position: fixed;
   width: 100%;
-  max-width: 300px;
+  // max-width: 300px;
   height: 100%;
   background-color: #131620;
   top: 0;
   right: 0;
   &__arrow {
     position: absolute;
-    top: 45px;
+    top: 42px;
     left: -5px;
   }
   &__arrow:hover {
@@ -216,11 +217,10 @@ const toggleMobileNav = () => {
     justify-content: center;
     position: absolute;
     height: 60px;
-    width: 90%;
+    width: 92%;
     margin-bottom: auto;
-    margin-bottom: 0 auto;
+    margin: 0 auto;
     position: relative;
-    // top: 510px;
     text-align: center;
     padding-left: 30px;
     font-size: 20px;
@@ -233,6 +233,7 @@ const toggleMobileNav = () => {
     cursor: pointer;
     border: 2px solid transparent;
     transition: 0.3s ease all;
+    top: 56%;
     &:hover {
       border: 2px solid #fff;
     }
@@ -242,8 +243,8 @@ const toggleMobileNav = () => {
     margin-right: 0;
   }
   &__chooser {
-    min-width: 55px;
-    max-width: 55px;
+    min-width: 100px;
+    max-width: 100px;
     position: relative;
     margin-left: 35px !important;
   }
@@ -252,14 +253,14 @@ const toggleMobileNav = () => {
 .chooser {
   position: relative;
   margin-left: 20px;
-  min-width: 30px;
-  max-width: 35px;
+  min-width: 100px;
+  max-width: 100px;
   display: flex;
   justify-content: center;
   &__arrow {
     position: absolute;
     top: 35px;
-    left: 40px;
+    left: 52px;
   }
   &__arrow:hover {
     transition: 0.8s ease all;
@@ -299,7 +300,7 @@ const toggleMobileNav = () => {
 }
 @media screen and (max-width: 750px) {
   .chooser {
-    margin-left: 90px;
+    margin-left: 50px;
   }
 }
 @media screen and (max-width: 1075px) {
