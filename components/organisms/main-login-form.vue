@@ -35,7 +35,8 @@
 </template>
 
 <script setup>
-  
+
+      
   let email = ref("")
   let password = ref("")
 </script>
