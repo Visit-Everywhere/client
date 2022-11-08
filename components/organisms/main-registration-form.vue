@@ -4,66 +4,52 @@
       <h1>Registration</h1>
       <NuxtLink id="nuxt-links" to="http://localhost:3000/login">Have an account?</NuxtLink>
     </div>
-    <form class="registration-container__form">
+    <v-form class="registration-container__form" ref="form" v-model="valid" lazy-validation>
       <div class="registration-container__form__top-inputs">
-        <v-text-field
-          label="Full name"
-          :rules="rules"
-          hide-details="auto"
-        ></v-text-field>
-        <v-text-field
-          label="Email"
-          :rules="rules"
-          hide-details="auto"
-        ></v-text-field>
-        <v-text-field
-          label="Phone number"
-          :rules="rules"
-          hide-details="auto"
-        ></v-text-field>
+        <v-text-field label="Full name" :rules="fullNameRules" v-model="fullName" required></v-text-field>
+        <v-text-field label="Email" :rules="emailRules" v-model="email" required></v-text-field>
+        <v-text-field label="Phone number" :rules="phoneRules" v-model="phoneNumber" required></v-text-field>
       </div>
-      <div class="registration-container__form__sex">
-        <h4>Gender:</h4>
-        <div class="registration-container__form__sex__radios">
-          <AtomsVeRadio radioName="sex" radioLabel="Man" />
-          <AtomsVeRadio radioName="sex" radioLabel="Other" />
-        </div>
-      </div>
+
       <div class="registration-container__form__bottom-inputs">
-        <v-text-field
-          label="Birthday"
-          :rules="rules"
-          hide-details="auto"
-        ></v-text-field>
-        <v-text-field
-          label="Password"
-          :rules="rules"
-          hide-details="auto"
-          type="password"
-        ></v-text-field>
-        <v-text-field
-          label="Confirm password"
-          :rules="rules"
-          hide-details="auto"
-          type="password"
-        ></v-text-field>
+        <v-text-field label="Birthday" :rules="birthdayRules" v-model="birthday" required></v-text-field>
+        <v-text-field label="Password" :rules="passwordRules" type="password" v-model="password" required> </v-text-field>
+        <v-text-field label="Confirm password" :rules="confirmPasswordRules" type="password" v-model="confirmPassword" required></v-text-field>
       </div>
-      <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to recieve a newsletter to my email." alignText="center" isChecked="true" />
-      <v-btn  height="56px"  rounded="pill" color="#38405F"  class="registration-container__form__button">Create an account</v-btn> 
-    </form>
+      <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to receive a newsletter to my email." alignText="center" isChecked />
+      <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click.prevent="validate">Create an account</v-btn>
+    </v-form>
     <div class="registration-container__continue">
       <h4>or continue with:</h4>
       <div class="registration-container__continue__icons">
         <img src="@/assets/img/google-icon.svg" alt="google" />
         <nuxt-link to="https://i.pinimg.com/originals/24/f1/f5/24f1f54f147a70157d56180b5192f6df.jpg"><img src="@/assets/img/apple-icon.svg" alt="apple" /></nuxt-link>
-        
       </div>
     </div>
   </div>
 </template>
 
-<script setup >
+<script setup>
+const form = ref();
+const valid = ref(true);
+const fullName = ref("");
+const fullNameRules = [(v) => !!v || "Name is required"];
+const email = ref("");
+const emailRules = [(v) => !!v || "E-mail is required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"];
+const phoneNumber = ref("");
+const phoneRules = [];
+const birthday = ref("");
+const birthdayRules = [];
+const password = ref("");
+const passwordRules = [];
+const confirmPassword = ref("");
+const confirmPasswordRules = [(v) => (!!v && v) === password.value || "Values do not match"];
 
+const validate = () => {
+  // const { valid } = await form.validate();
+  // if (valid) alert("Form is valid");
+  console.log(fullName.value);
+};
 </script>
 
 <style lang="scss" scoped>

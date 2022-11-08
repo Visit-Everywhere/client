@@ -1,13 +1,15 @@
+import { defineNuxtConfig } from "nuxt";
+
 export default defineNuxtConfig({
   css: ["vuetify/lib/styles/main.sass", "@/assets/scss/app.scss"],
-  // vite: {
-  //   define: {
-  //     "process.env.DEBUG": false,
-  //   },
-  // },
-  meta: {
-    title: "VE NAXUI",
+  vite: {
+    define: {
+      "process.env.DEBUG": false,
+    },
   },
+  // meta: {
+  //   title: "VE NAXUI",
+  // },
   srcDir: "./",
   // hooks: {
   //   "components:dirs"(dirs) {
@@ -43,7 +45,7 @@ export default defineNuxtConfig({
     global: true,
     dirs: ["~/components"],
   },
-  modern: true,
+  // modern: true,
   build: {
     // extractCSS: true,
     // styleResources: {
@@ -51,10 +53,10 @@ export default defineNuxtConfig({
     //   hoistUseStatements: true,
     // },
     transpile: ["vuetify"],
-    splitChunks: {
-      pages: true,
-      layouts: true,
-    },
+    // splitChunks: {
+    //   pages: true,
+    //   layouts: true,
+    // },
     //   postcss: {
     //     postcssOptions: {
     //       plugins: {
@@ -63,14 +65,14 @@ export default defineNuxtConfig({
     //       },
     //     },
     //   },
-    loaders: {
-      sass: {
-        implementation: require("sass"),
-      },
-      scss: {
-        implementation: require("sass"),
-      },
-    },
+    // loaders: {
+    //   sass: {
+    //     implementation: require("sass"),
+    //   },
+    //   scss: {
+    //     implementation: require("sass"),
+    //   },
+    // },
   },
   // plugins: ['@/plugins/flowbite.client.ts'],
 });

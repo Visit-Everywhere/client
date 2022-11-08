@@ -14,10 +14,10 @@
     "eslint": "^8.25.0",
     "eslint-plugin-vue": "^9.6.0",
     "node-sass": "^6.0.0",
-    "nuxt": "3.0.0-rc.10",
+    "nuxt": "rc",
     "pinia": "^2.0.14",
     "postcss": "^8.3.9",
-    "sass": "^1.55.0",
+    "sass": "^1.56.0",
     "sass-loader": "^10.1.1",
     "yup": "^0.32.11"
   },
@@ -29,6 +29,6 @@
     "@vueuse/core": "^8.7.3",
     "axios": "^1.1.3",
     "vee-validate": "^4.5.11",
-    "vuetify": "^3.0.0-beta.10"
+    "vuetify": "^3.0.0"
   }
 }
