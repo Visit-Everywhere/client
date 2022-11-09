@@ -3,7 +3,7 @@
     <div class="order__list">
       <ul class="order__list__food">
         <li v-for="someMenu in menuList" :key="index">
-          <button @click="filterFood">{{ someMenu }}</button>
+          <button class="order__list__btn" @click="filterFood">{{ someMenu }}</button>
         </li>
       </ul>
     </div>
@@ -20,9 +20,9 @@ onMounted(async () => {
   await addItemToSelected(123123, 1233, 154352);
   await removeItemFromSelected(1233, 123123);
 });
-const menuList = ["Горячаяя еда", "Бургеры"];
+const menuList = ["Горячаяя еда", "Бургеры", "Срака"];
 const menuFood = [
-  { foodId: "Горячаяя еда", id: "1" },
+  { foodId: "Горячаяя еда", id: "1", saleMark: true },
   { foodId: "Горячаяя еда", id: "1" },
   { foodId: "Горячаяя еда", id: "1" },
   { foodId: "Горячаяя еда", id: "1" },
@@ -45,11 +45,14 @@ filteredMenu.push(...filterFood);
   display: flex;
   justify-content: space-around;
   &__list {
-    width: 181px;
+    height: 508px;
+    width: 210px;
     color: #d4d4d5;
     display: flex;
     border-right: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 24px 24px 0px;
+    padding-top: 24px;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
     &__food {
       list-style-type: none;
       font-size: 20px;
@@ -57,18 +60,50 @@ filteredMenu.push(...filterFood);
       font-weight: 500;
       font-family: tahoma;
     }
-    &__food li {
-      padding: 12px;
+    &__btn {
+      border: none;
+      color: white;
+      width: 180px;
+      height: 46px;
+      font-size: 18px;
+      background-color: #131620;
+      cursor: pointer;
+      :hover {
+        background: #2a2d36;
+      }
     }
   }
   &__price {
     width: 100%;
     height: 508px;
     display: grid;
-    grid-column-gap: 36px;
+    grid-column-gap: 10px;
     grid-row-gap: 16px;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 24px 32px 16px 24px;
+    grid-template-columns: repeat(auto-fill, 196px);
+    padding: 24px 24px 16px 24px;
+    overflow: auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  .order {
+    &__list {
+      min-width: 180px;
+    }
+    &__price {
+      justify-content: center;
+      padding-right: 0px;
+    }
+  }
+}
+@media screen and (max-width: 813px) {
+  .order {
+    &__list {
+      min-width: 180px;
+    }
+    &__price {
+      justify-content: center;
+      padding-right: 0px;
+    }
   }
 }
 </style>

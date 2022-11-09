@@ -37,7 +37,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .food {
-  width: 100%;
+  width: 160px;
   position: relative;
   &-name {
     font-family: tahoma;
