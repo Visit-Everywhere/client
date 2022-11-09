@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@fancyapps/ui": "^4.0.31",
+    "@mdi/font": "^7.0.96",
     "@pinia/nuxt": "^0.4.2",
     "@vueuse/nuxt": "^8.6.0",
     "autoprefixer": "^10.4.5",

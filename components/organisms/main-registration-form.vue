@@ -13,8 +13,25 @@
 
       <div class="registration-container__form__bottom-inputs">
         <v-text-field label="Birthday" :rules="birthdayRules" v-model="birthday" required></v-text-field>
-        <v-text-field label="Password" :rules="passwordRules" type="password" v-model="password" required> </v-text-field>
-        <v-text-field label="Confirm password" :rules="confirmPasswordRules" type="password" v-model="confirmPassword" required></v-text-field>
+        <v-text-field
+          label="Password"
+          :rules="passwordRules"
+          :type="showPassword ? 'text' : 'password'"
+          @click:append-inner="showPassword = !showPassword"
+          :append-inner-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
+          v-model="password"
+          required
+        >
+        </v-text-field>
+        <v-text-field
+          label="Confirm password"
+          :rules="confirmPasswordRules"
+          :type="showConfirmPassword ? 'text' : 'password'"
+          @click:append-inner="showConfirmPassword = !showConfirmPassword"
+          :append-inner-icon="showConfirmPassword ? 'mdi-eye-off' : 'mdi-eye'"
+          v-model="confirmPassword"
+          required
+        ></v-text-field>
       </div>
       <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to receive a newsletter to my email." alignText="center" isChecked />
       <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click.prevent="validate">Create an account</v-btn>
@@ -41,14 +58,16 @@ const phoneRules = [];
 const birthday = ref("");
 const birthdayRules = [];
 const password = ref("");
-const passwordRules = [];
+const passwordRules = [(v) => v.length >= 8];
+const showPassword = ref(false);
 const confirmPassword = ref("");
 const confirmPasswordRules = [(v) => (!!v && v) === password.value || "Values do not match"];
+const showConfirmPassword = ref(false);
 
-const validate = () => {
-  // const { valid } = await form.validate();
-  // if (valid) alert("Form is valid");
-  console.log(fullName.value);
+const validate = async () => {
+  console.log(form.value);
+  const { valid } = await form.validate();
+  if (valid) alert("Form is valid");
 };
 </script>
 
