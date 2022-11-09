@@ -9,6 +9,7 @@
     </div>
     <div class="order__price">
       <MoleculesFood v-bind="food" v-for="(food, index) in filterFood" :key="`${index}`" />
+      <AtomsBuy />
     </div>
   </div>
 </template>
