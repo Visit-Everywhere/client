@@ -4,7 +4,7 @@
       <h1>Registration</h1>
       <NuxtLink id="nuxt-links" to="http://localhost:3000/login">Have an account?</NuxtLink>
     </div>
-    <v-form class="registration-container__form" ref="form" v-model="valid" lazy-validation>
+    <v-form class="registration-container__form" v-model="valid" lazy-validation>
       <div class="registration-container__form__top-inputs">
         <v-text-field label="Full name" :rules="fullNameRules" v-model="fullName" required></v-text-field>
         <v-text-field label="Email" :rules="emailRules" v-model="email" required></v-text-field>
@@ -34,7 +34,7 @@
         ></v-text-field>
       </div>
       <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to receive a newsletter to my email." alignText="center" isChecked />
-      <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click.prevent="validate">Create an account</v-btn>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click.prevent="validate" :disabled="!valid">Create an account</v-btn>
     </v-form>
     <div class="registration-container__continue">
       <h4>or continue with:</h4>
@@ -47,8 +47,8 @@
 </template>
 
 <script setup>
-const form = ref();
-const valid = ref(true);
+// const form = ref();
+const valid = ref(false);
 const fullName = ref("");
 const fullNameRules = [(v) => !!v || "Name is required"];
 const email = ref("");
@@ -65,9 +65,7 @@ const confirmPasswordRules = [(v) => (!!v && v) === password.value || "Values do
 const showConfirmPassword = ref(false);
 
 const validate = async () => {
-  console.log(form.value);
-  const { valid } = await form.validate();
-  if (valid) alert("Form is valid");
+  console.log(!!valid.value);
 };
 </script>
 
