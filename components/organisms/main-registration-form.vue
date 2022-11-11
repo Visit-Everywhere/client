@@ -6,13 +6,13 @@
     </div>
     <v-form class="registration-container__form" v-model="valid" lazy-validation>
       <div class="registration-container__form__top-inputs">
-        <v-text-field label="Full name" :rules="fullNameRules" v-model="fullName" required></v-text-field>
-        <v-text-field label="Email" :rules="emailRules" v-model="email" required></v-text-field>
-        <v-text-field label="Phone number" :rules="phoneRules" v-model="phoneNumber" required></v-text-field>
+        <v-text-field label="Full name" :rules="fullNameRules" v-model="fullName" variant="underlined"></v-text-field>
+        <v-text-field label="Email" :rules="emailRules" v-model="email" variant="underlined"></v-text-field>
+        <v-text-field label="Phone number" v-maska="'+38(###)-##-##-###'" placeholder="0999999999" :rules="phoneRules" v-model="phoneNumber" variant="underlined"></v-text-field>
       </div>
 
       <div class="registration-container__form__bottom-inputs">
-        <v-text-field label="Birthday" :rules="birthdayRules" v-model="birthday" required></v-text-field>
+        <v-text-field label="Birthday" :rules="birthdayRules" type="date" v-model="birthday" variant="underlined"></v-text-field>
         <v-text-field
           label="Password"
           :rules="passwordRules"
@@ -20,7 +20,7 @@
           @click:append-inner="showPassword = !showPassword"
           :append-inner-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
           v-model="password"
-          required
+          variant="underlined"
         >
         </v-text-field>
         <v-text-field
@@ -30,7 +30,7 @@
           @click:append-inner="showConfirmPassword = !showConfirmPassword"
           :append-inner-icon="showConfirmPassword ? 'mdi-eye-off' : 'mdi-eye'"
           v-model="confirmPassword"
-          required
+          variant="underlined"
         ></v-text-field>
       </div>
       <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to receive a newsletter to my email." alignText="center" isChecked />
@@ -54,14 +54,14 @@ const fullNameRules = [(v) => !!v || "Name is required"];
 const email = ref("");
 const emailRules = [(v) => !!v || "E-mail is required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"];
 const phoneNumber = ref("");
-const phoneRules = [];
+const phoneRules = [(v) => !!v || "Name is required"];
 const birthday = ref("");
-const birthdayRules = [];
+const birthdayRules = [(v) => !!v || "Name is required"];
 const password = ref("");
-const passwordRules = [(v) => v.length >= 8];
+const passwordRules = [(v) => !!v || "Name is required", (v) => v.length >= 8];
 const showPassword = ref(false);
 const confirmPassword = ref("");
-const confirmPasswordRules = [(v) => (!!v && v) === password.value || "Values do not match"];
+const confirmPasswordRules = [(v) => !!v || "Name is required", (v) => (!!v && v) === password.value || "Values do not match"];
 const showConfirmPassword = ref(false);
 
 const validate = async () => {
