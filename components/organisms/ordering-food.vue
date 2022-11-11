@@ -1,6 +1,6 @@
 <template>
   <div class="order">
-    <div class="order__list">
+    <!-- <div class="order__list">
       <ul class="order__list__food">
         <li v-for="someMenu in menuList" :key="index">
           <button class="order__list__btn" @click="filterFood">{{ someMenu }}</button>
@@ -9,18 +9,18 @@
     </div>
     <div class="order__price">
       <MoleculesFood v-bind="food" v-for="(food, index) in filterFood" :key="`${index}`" />
-      <AtomsBuy />
-    </div>
+    </div> -->
   </div>
 </template>
+
 <script setup>
-import { CartState } from "~/stores/cart";
-const { selected, addItemToSelected, removeItemFromSelected } = CartState();
-onMounted(async () => {
-  console.log(selected);
-  await addItemToSelected(123123, 1233, 154352);
-  await removeItemFromSelected(1233, 123123);
-});
+// import { CartState } from "~/stores/cart";
+// const { selected, addItemToSelected, removeItemFromSelected } = CartState();
+// onMounted(async () => {
+//   console.log(selected);
+//   await addItemToSelected(123123, 1233, 154352);
+//   await removeItemFromSelected(1233, 123123);
+// });
 const menuList = ["Горячаяя еда", "Бургеры", "Срака"];
 const menuFood = [
   { foodId: "Горячаяя еда", id: "1", saleMark: true },
@@ -54,6 +54,7 @@ filteredMenu.push(...filterFood);
     padding-top: 24px;
     overflow-y: scroll !important;
     overflow-x: hidden !important;
+    padding-right: 10;
     &__food {
       list-style-type: none;
       font-size: 20px;
@@ -67,11 +68,11 @@ filteredMenu.push(...filterFood);
       width: 180px;
       height: 46px;
       font-size: 18px;
-      background-color: #131620;
+      background-color: #2a2d36;
       cursor: pointer;
-      :hover {
-        background: #2a2d36;
-      }
+    }
+    &__btn :hover {
+      background-color: #2a2d36;
     }
   }
   &__price {

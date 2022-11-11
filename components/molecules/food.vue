@@ -5,6 +5,7 @@
       <img class="food-img" src="@/assets/img/fastFood.png" />
       <h1 class="food-name">{{ foodName }}</h1>
       <h1 class="food-price">${{ foodPrice }}/100g</h1>
+      <AtomsBuy />
     </div>
   </div>
 </template>

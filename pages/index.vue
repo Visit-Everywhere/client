@@ -5,7 +5,8 @@
   <OrganismsPopular />
   <OrganismsBest />
   <OrganismsFooter /> -->
-  <OrganismsOrderingFood />
+  <!-- <OrganismsOrderingFood /> -->
+  <OrganismsMobileFood />
 </template>
 
 <script setup></script>
