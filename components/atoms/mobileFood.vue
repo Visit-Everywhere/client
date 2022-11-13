@@ -1,11 +1,11 @@
 <template>
   <div class="food">
     <div class="food-about">
-      <!-- <Sale class="food-sale" v-if="saleMark" :sale="sale" /> -->
+      <AtomsMobileSale class="food-sale" v-if="saleMark" :sale="sale" />
       <img class="food-img" src="@/assets/img/fastFood.png" />
       <h1 class="food-name">{{ foodName }}</h1>
       <h1 class="food-price">${{ foodPrice }}/100g</h1>
-      <!-- <AtomsBuy /> -->
+      <AtomsMobileCheck />
     </div>
   </div>
 </template>
