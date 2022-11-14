@@ -1,23 +1,24 @@
 <template>
   <div class="login-container">
     <h1 class="login-container__header">Login</h1>
-    <form class="login-container__form">
+    <v-form class="login-container__form" v-model="valid">
       <div class="login-container__form__inputs">
-        <v-text-field
-          label="Email"
-          v-model="email"
-          class="main-input"
-        ></v-text-field>
+        <v-text-field label="Email" v-model="email" class="main-input" :rules="emailRules" variant="underlined"></v-text-field>
         <v-text-field
           label="Password"
           v-model="password"
+          @click:append-inner="showPassword = !showPassword"
+          :append-inner-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
+          :type="showPassword ? 'text' : 'password'"
+          :rules="passwordRules"
+          variant="underlined"
         ></v-text-field>
       </div>
-      <AtomsVeCheckbox checkboxLabel="Stay authorized" class="login-container__form__checkbox" v-model="checkboxValue" veCheckboxId="stay" />
+      <AtomsVeCheckbox checkboxLabel="Stay authorized" class="login-container__form__checkbox" v-model="checkboxValue" :isChecked="checkboxValue" veCheckboxId="stay" />
       <div class="btn-login">
-        <v-btn  class="login-container__form__button" height="56px"  rounded="pill" color="#38405F" block>Login</v-btn>
+        <v-btn class="login-container__form__button" height="56px" rounded="pill" color="#38405F" block :disabled="!valid">Login</v-btn>
       </div>
-    </form>
+    </v-form>
     <div class="login-container__under-form">
       <div class="login-container__under-form__continue">
         <h4>or continue with:</h4>
@@ -35,9 +36,13 @@
 </template>
 
 <script setup>
-  
-  let email = ref("")
-  let password = ref("")
+const email = ref("");
+const emailRules = [(v) => !!v || "E-mail is required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"];
+const password = ref("");
+const passwordRules = [(v) => !!v || "Name is required"];
+const showPassword = ref(false);
+const valid = ref(false);
+const checkboxValue = ref(true);
 </script>
 
 <style lang="scss" scoped>
@@ -56,11 +61,9 @@
   &__form {
     margin: 88px 0 31px 0;
     &__inputs {
-      
       color: #808080;
       display: flex;
       flex-direction: column;
-
     }
     &__checkbox {
       margin: 24px 0 32px 0;
