@@ -589,7 +589,7 @@
     "vite-plugin-checker" "^0.5.1"
     "vue-bundle-renderer" "^0.4.2"
 
-"@pinia/nuxt@^0.4.2":
+"@pinia/nuxt@^0.4.3":
   "integrity" "sha512-pDyThvbOi9ztSPI9RDJG857Knb/mmUdDrDiLXbtLVQ3/l647jKncdP4TiRLnMlObENJjcFPEwHT7OVPq4VhQMw=="
   "resolved" "https://registry.npmjs.org/@pinia/nuxt/-/nuxt-0.4.3.tgz"
   "version" "0.4.3"

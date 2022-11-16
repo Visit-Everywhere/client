@@ -1,9 +1,5 @@
 <template>
-  <!-- <OrganismsRestorePasswordEmail/> -->
-  <!-- <OrganismsRecieve-mail/> -->
-  <OrganismsMainRegistrationForm />
-  <!-- <OrganismsMainLoginForm/> -->
-  <!-- <OrganismsTest/> -->
+  <MoleculesComments/>
 </template>
 
 <style lang="scss"></style>

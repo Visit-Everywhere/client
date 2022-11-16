@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@fancyapps/ui": "^4.0.31",
-    "@pinia/nuxt": "^0.4.2",
+    "@pinia/nuxt": "^0.4.3",
     "@vueuse/nuxt": "^8.6.0",
     "autoprefixer": "^10.4.5",
     "eslint": "^8.25.0",

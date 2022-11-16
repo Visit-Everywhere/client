@@ -24,12 +24,12 @@ export default defineNuxtConfig({
   //   buildAssetsDir: "assets/",
   // },
   modules: [
-    // [
-    //   "@pinia/nuxt",
-    //   {
-    //     autoImports: ["defineStore", "acceptHMRUpdate"],
-    //   },
-    // ],
+    [
+      "@pinia/nuxt",
+      {
+        autoImports: ["defineStore", "acceptHMRUpdate"],
+      },
+    ],
     "@vueuse/nuxt",
   ],
 
