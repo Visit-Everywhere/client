@@ -33,7 +33,7 @@
           variant="underlined"
         ></v-text-field>
       </div>
-      <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to receive a newsletter to my email." alignText="center" isChecked />
+      <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to receive a newsletter to my email." alignText="center" v-model:checked="checkboxValue" />
       <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click.prevent="validate" :disabled="!valid">Create an account</v-btn>
     </v-form>
     <div class="registration-container__continue">
@@ -47,7 +47,6 @@
 </template>
 
 <script setup>
-// const form = ref();
 const valid = ref(false);
 const fullName = ref("");
 const fullNameRules = [(v) => !!v || "Name is required"];
@@ -63,7 +62,7 @@ const showPassword = ref(false);
 const confirmPassword = ref("");
 const confirmPasswordRules = [(v) => !!v || "Name is required", (v) => (!!v && v) === password.value || "Values do not match"];
 const showConfirmPassword = ref(false);
-
+const checkboxValue = ref(true);
 const validate = async () => {
   console.log(!!valid.value);
 };

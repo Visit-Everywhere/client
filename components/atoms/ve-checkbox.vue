@@ -1,6 +1,6 @@
 <template>
   <div class="input" onselectstart="return false" onmousedown="return false" :style="{ textAlign: alignText }">
-    <input type="checkbox" :id="veCheckboxId" class="input__checkbox" :checked="isChecked" />
+    <input type="checkbox" :id="veCheckboxId" class="input__checkbox" @input="(event) => $emit('update:checked', event.target.checked)" :checked="checked" />
     <label :for="veCheckboxId" class="input__label">{{ checkboxLabel }}</label>
   </div>
 </template>
@@ -8,29 +8,32 @@
 <script setup>
 const props = defineProps({
   checkboxLabel: {
-      type: String,
-      default: "",
-    },
-    value: {
-      type: String,
-      default: "",
-    },
-    modelValue: {
-      type: Array,
-      default: () => [],
-    },
-    veCheckboxId: {
-      type: String,
-      default: "",
-    },
-    alignText: {
-      type: String,
-      default: "left",
-    },
-    isChecked: {
-      type: Boolean,
-      default: false,
-    },
+    type: String,
+    default: "",
+  },
+  // value: {
+  //   type: String,
+  //   default: "",
+  // },
+  // modelValue: {
+  // type: Array,
+  // default: () => [],
+  // },
+  veCheckboxId: {
+    type: String,
+    default: "",
+  },
+  alignText: {
+    type: String,
+    default: "left",
+  },
+  // isChecked: {
+  // type: Boolean,
+  // default: false,
+  // },
+  checked: {
+    type: Boolean,
+  },
 });
 </script>
 

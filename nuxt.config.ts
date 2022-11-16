@@ -1,5 +1,3 @@
-import { defineNuxtConfig } from "nuxt";
-
 export default defineNuxtConfig({
   css: ["vuetify/lib/styles/main.sass", "@/assets/scss/app.scss"],
   vite: {
@@ -38,9 +36,9 @@ export default defineNuxtConfig({
   // styleResources: {
   //   sass: ["@/assets/scss/app.scss"],
   // },
-  vueuse: {
-    ssrHandlers: true,
-  },
+  // vueuse: {
+  //   ssrHandlers: true,
+  // },
   components: {
     global: true,
     dirs: ["~/components"],

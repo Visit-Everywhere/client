@@ -2,22 +2,20 @@
   <div class="form-container">
     <span>
       <h1>Restore password</h1>
-      <h5>Write your phone number or email from the account</h5>
+      <h5>Write your email from the account</h5>
     </span>
-    <form>
-      <v-text-field
-        label="Email"
-        :rules="rules"
-        hide-details="auto"
-        class="form-container__input"
-        type="email"
-      ></v-text-field>
-      <v-btn  height="56px"   rounded="pill" color="#38405F"  class="form-container__button" >Next</v-btn>
-    </form>
+    <v-form v-model="valid">
+      <v-text-field label="Email" v-model="email" :rules="emailRules" hide-details="auto" class="form-container__input" type="email"></v-text-field>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button">Next</v-btn>
+    </v-form>
   </div>
 </template>
 
 <script setup>
+const email = ref("");
+const valid = ref(false);
+
+const emailRules = [(v) => !!v || "E-mail is required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"];
 </script>
 
 <style lang="scss" scoped>
@@ -50,7 +48,7 @@
     padding: 16px 47px;
 
     display: flex;
-    color: #FFFFFF;
+    color: #ffffff;
     max-width: 180px;
     margin: 0 auto;
     margin: 0 auto;
