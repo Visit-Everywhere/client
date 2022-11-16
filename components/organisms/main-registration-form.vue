@@ -177,4 +177,8 @@ const validate = async () => {
     font-size: 16px;
   }
 }
+//проблема: фикс иконки календаря
+input[type="date" i]::-webkit-calendar-picker-indicator {
+  filter: invert(47%) sepia(73%) saturate(0%) hue-rotate(212deg) brightness(92%) contrast(93%);
+}
 </style>
