@@ -20,7 +20,7 @@ const props = defineProps({
   font-size: 18px;
   border-radius: 69px;
   text-align: center;
-  padding: 8px 6px 2px 6px;
+  padding: 5px 6px 2px 6px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: absolute;
   font-weight: 500;

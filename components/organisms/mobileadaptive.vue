@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="order">
     <MoleculesBtn v-for="someMenu in menuList" :key="someMenu" :testProp="someMenu" />
   </div>
 </template>
@@ -9,7 +9,10 @@ const menuList = ["Горячаяя еда", "Бургеры", "Срака"];
 </script>
 
 <style lang="scss">
-.icon:focus {
-  transform: rotate(-90deg);
+// .icon:focus {
+//   transform: rotate(-90deg);
+// }
+.order {
+  width: 450px;
 }
 </style>

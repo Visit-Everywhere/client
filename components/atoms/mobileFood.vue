@@ -55,6 +55,7 @@ const props = defineProps({
     font-size: 14px;
     line-height: 17px;
     color: #d4d4d5;
+    padding-top: 5px;
   }
   &-img {
     border-radius: 16px;

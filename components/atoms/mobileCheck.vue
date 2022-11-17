@@ -21,30 +21,32 @@
     }
     &__custom::before {
       content: "";
-      position: relative;
+      position: absolute;
       display: inline-block;
-      width: 24px;
-      height: 24px;
+      width: 30px;
+      height: 30px;
       background-size: contain;
-      background: url(@/assets/img/Vector.png);
+      background: url(@/assets/img/Plus.png);
       background-repeat: no-repeat;
       position: absolute;
-      top: 125px;
+      top: 118px;
       left: 130px;
+      background-position: 50% 50%;
     }
     &__true:checked + &__custom::before {
       content: "";
       display: inline-block;
-      width: 24px;
-      height: 24px;
+      width: 30px;
+      height: 30px;
       background-size: contain;
-      background: url(@/assets/img/Vector_no.png);
+      background: url(@/assets/img/Minus.png);
       background-repeat: no-repeat;
       position: absolute;
-      top: 125px;
+      top: 118px;
       left: 130px;
       background-color: #38405f;
       border-radius: 50%;
+      background-position: 50% 50%;
     }
   }
 }
