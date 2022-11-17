@@ -1,15 +1,15 @@
 <template>
-  <div class="order">
-    <!-- <div class="order__list">
-      <ul class="order__list__food">
+  <div class="orders">
+    <div class="orders__list">
+      <ul class="orders__list__food">
         <li v-for="someMenu in menuList" :key="index">
-          <button class="order__list__btn" @click="filterFood">{{ someMenu }}</button>
+          <button class="orders__list__btn" @click="filterFood">{{ someMenu }}</button>
         </li>
       </ul>
     </div>
-    <div class="order__price">
+    <div class="orders__price">
       <MoleculesFood v-bind="food" v-for="(food, index) in filterFood" :key="`${index}`" />
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -38,7 +38,7 @@ const filterFood = menuFood.filter((food) => food.id === "1");
 filteredMenu.push(...filterFood);
 </script>
 <style lang="scss" scoped>
-.order {
+.orders {
   background: #131620;
   width: 100%;
   top: 269px;
@@ -87,7 +87,7 @@ filteredMenu.push(...filterFood);
   }
 }
 @media screen and (max-width: 650px) {
-  .order {
+  .orders {
     &__list {
       min-width: 180px;
     }
@@ -98,7 +98,7 @@ filteredMenu.push(...filterFood);
   }
 }
 @media screen and (max-width: 813px) {
-  .order {
+  .orders {
     &__list {
       min-width: 180px;
     }
