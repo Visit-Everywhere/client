@@ -56,7 +56,7 @@ filteredMenu.push(...filterFood);
     justify-content: center;
     display: grid;
     row-gap: 24px;
-    grid-template-columns: 200px auto;
+    grid-template-columns: 190px auto;
   }
 }
 .mx-auto {
