@@ -4,19 +4,15 @@
       <h1>Restore password</h1>
       <h5>Enter the 6-digit code you received.</h5>
     </span>
-    <form>
-      <v-text-field
-        label="Code"
-        :rules="rules"
-        hide-details="auto"
-        class="form-container__input"
-      ></v-text-field>
-      <v-btn  height="56px"   rounded="pill" color="#38405F"  class="form-container__button" >Restore</v-btn>
-    </form>
+    <v-form>
+      <v-text-field label="Code" hide-details="auto" class="form-container__input" variant="underlined" v-model="code"></v-text-field>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button">Restore</v-btn>
+    </v-form>
   </div>
 </template>
 
 <script setup>
+const code = ref("");
 </script>
 
 <style lang="scss" scoped>

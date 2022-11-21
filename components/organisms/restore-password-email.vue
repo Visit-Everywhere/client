@@ -5,7 +5,7 @@
       <h5>Write your email from the account</h5>
     </span>
     <v-form v-model="valid">
-      <v-text-field label="Email" v-model="email" :rules="emailRules" hide-details="auto" class="form-container__input" type="email"></v-text-field>
+      <v-text-field label="Email" v-model="email" :rules="emailRules" hide-details="auto" class="form-container__input" type="email" variant="underlined"></v-text-field>
       <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button">Next</v-btn>
     </v-form>
   </div>

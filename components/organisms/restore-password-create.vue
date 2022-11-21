@@ -3,27 +3,40 @@
     <span>
       <h1>Create a new password</h1>
     </span>
-    <form>
+    <v-form v-model="valid">
       <v-text-field
         label="Password"
-        :rules="rules"
-        hide-details="auto"
+        :rules="passwordRules"
         class="form-container__input"
-        Type="password"
+        :type="showPassword ? 'text' : 'password'"
+        v-model="password"
+        @click:append-inner="showPassword = !showPassword"
+        :append-inner-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
+        variant="underlined"
       ></v-text-field>
       <v-text-field
-        label="Password"
-        :rules="rules"
-        hide-details="auto"
+        label="Confirm password"
+        :rules="confirmPasswordRules"
         class="form-container__confirm"
-        Type="password"
+        :type="showConfirmPassword ? 'text' : 'password'"
+        v-model="confirmPassword"
+        @click:append-inner="showConfirmPassword = !showConfirmPassword"
+        :append-inner-icon="showConfirmPassword ? 'mdi-eye-off' : 'mdi-eye'"
+        variant="underlined"
       ></v-text-field>
-      <v-btn  height="56px"   rounded="pill" color="#38405F"  class="form-container__button" >Restore</v-btn>
-    </form>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button">Restore</v-btn>
+    </v-form>
   </div>
 </template>
 
 <script setup>
+const valid = ref(false);
+const password = ref("");
+const passwordRules = [(v) => !!v || "Name is required", (v) => v.length >= 8];
+const showPassword = ref(false);
+const confirmPassword = ref("");
+const confirmPasswordRules = [(v) => !!v || "Name is required", (v) => (!!v && v) === password.value || "Values do not match"];
+const showConfirmPassword = ref(false);
 </script>
 
 <style lang="scss" scoped>
