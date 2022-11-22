@@ -1,7 +1,7 @@
 <template>
   <div class="order">
     <div class="order__full">
-      <MoleculesProduct />
+      <MoleculesProduct :testProp="menuList" />
     </div>
     <div class="order__mobile">
       <MoleculesBtn v-for="someMenu in menuList" :key="someMenu" :testProp="someMenu" />
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-const menuList = ["Горячаяя еда", "Бургеры", "Срака"];
+const menuList = ["Горячаяя еда", "Бургеры"];
 </script>
 
 <style lang="scss">
@@ -19,6 +19,11 @@ const menuList = ["Горячаяя еда", "Бургеры", "Срака"];
     width: 390px;
   }
 }
-@media screen and (width) {
+@media screen and (min-width: 1440px) {
+  .order {
+    &__mobile {
+      // display: none;
+    }
+  }
 }
 </style>
