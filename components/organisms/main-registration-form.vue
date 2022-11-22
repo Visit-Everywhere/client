@@ -34,7 +34,7 @@
         ></v-text-field>
       </div>
       <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to receive a newsletter to my email." alignText="center" v-model:checked="checkboxValue" />
-      <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click.prevent="validate" :disabled="!valid">Create an account</v-btn>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click="registration" :disabled="!valid">Create an account</v-btn>
     </v-form>
     <div class="registration-container__continue">
       <h4>or continue with:</h4>
@@ -65,6 +65,27 @@ const showConfirmPassword = ref(false);
 const checkboxValue = ref(true);
 const validate = async () => {
   console.log(!!valid.value);
+};
+
+const registration = async () => {
+  const summary = {
+    email: email.value,
+    username: fullName.value,
+    password: password.value,
+  };
+  console.log(summary);
+  let response = await fetch("http://localhost:5000/user/register", {
+    method: "POST",
+    body: JSON.stringify(summary),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (response.status == 200) {
+    console.log("text");
+    const json = await response.json();
+    console.log(json);
+  }
 };
 </script>
 
