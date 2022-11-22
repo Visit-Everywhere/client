@@ -7,7 +7,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps(["bluda"]);
+</script>
 
 <style lang="scss">
 .wrap {
