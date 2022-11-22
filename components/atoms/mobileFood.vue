@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-// import Sale from "../atoms/sale.vue";
 const props = defineProps({
   foodImg: {
     type: String,

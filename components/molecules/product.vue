@@ -9,12 +9,15 @@
     </div>
     <div class="orders__price">
       <AtomsMobileFood v-bind="food" v-for="(food, index) in filteredMenu" :key="`${index}`" />
-      <button class="orders__cartBtn"><i class="orders__cartBtn__img"></i></button>
+      <button class="orders__cartBtn">
+        <i class="orders__cartBtn__img">{{ bluda }}</i>
+      </button>
     </div>
   </div>
 </template>
 
 <script setup>
+let bludaArr = [];
 const props = defineProps(["testProp"]);
 const filteredMenu = ref([]);
 const menuFood = [
@@ -28,10 +31,12 @@ const menuFood = [
   { foodId: "Горячаяя еда", id: "1" },
   { foodId: "Бургеры", id: "2" },
 ];
+const bluda = bludaArr.push(...menuFood);
 const handleClickList = (id) => {
   filteredMenu.value = menuFood.filter((food) => food.foodId === id);
 };
 filteredMenu.value = menuFood.filter((food) => food.foodId === props.testProp[0]);
+console.log(bludaArr);
 </script>
 
 <style lang="scss" scoped>
