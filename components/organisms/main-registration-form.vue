@@ -47,6 +47,7 @@
 </template>
 
 <script setup>
+const { $publicApi } = useNuxtApp();
 const valid = ref(false);
 const fullName = ref("");
 const fullNameRules = [(v) => !!v || "Name is required"];
@@ -63,9 +64,6 @@ const confirmPassword = ref("");
 const confirmPasswordRules = [(v) => !!v || "Name is required", (v) => (!!v && v) === password.value || "Values do not match"];
 const showConfirmPassword = ref(false);
 const checkboxValue = ref(true);
-const validate = async () => {
-  console.log(!!valid.value);
-};
 
 const registration = async () => {
   const summary = {
