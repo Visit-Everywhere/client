@@ -1,6 +1,6 @@
 import axios from "axios";
 export default defineNuxtPlugin((nuxtApp) => {
-  const domain = "https://api.animakuro.com";
+  const domain = "http://localhost:5000/";
   let publicApi = axios.create({
     baseURL: domain,
     timeout: 1000,

@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  css: ["vuetify/lib/styles/main.sass", "@/assets/scss/app.scss"],
+  css: ["vuetify/lib/styles/main.sass", "@/assets/scss/app.scss", "@mdi/font/css/materialdesignicons.css"],
   vite: {
     define: {
       "process.env.DEBUG": false,

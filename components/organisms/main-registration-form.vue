@@ -47,7 +47,6 @@
 </template>
 
 <script setup>
-const { $publicApi } = useNuxtApp();
 const valid = ref(false);
 const fullName = ref("");
 const fullNameRules = [(v) => !!v || "Name is required"];
