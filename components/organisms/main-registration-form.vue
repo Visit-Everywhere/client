@@ -34,7 +34,7 @@
         ></v-text-field>
       </div>
       <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to receive a newsletter to my email." alignText="center" v-model:checked="checkboxValue" />
-      <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click="registration" :disabled="!valid">Create an account</v-btn>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click="test" :disabled="!valid">Create an account</v-btn>
     </v-form>
     <div class="registration-container__continue">
       <h4>or continue with:</h4>
@@ -47,6 +47,8 @@
 </template>
 
 <script setup>
+import { authUserState } from "~/stores/authUserFroms";
+const { test } = authUserState();
 const valid = ref(false);
 const fullName = ref("");
 const fullNameRules = [(v) => !!v || "Name is required"];

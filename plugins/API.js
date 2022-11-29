@@ -1,7 +1,8 @@
-import API from "../API/index";
+// import API from "../API/index";
 
-export default {
-  install(Vue) {
-    Vue.prototype.$api = API;
-  },
-};
+// export default {
+//   install(Vue) {
+//     Vue.prototype.$api = API;
+//   },
+// };
+export default defineNuxtPlugin(() => {});
