@@ -34,7 +34,7 @@ import { authUserState } from "~/stores/authUserFroms";
 const { createNewPassword } = authUserState();
 const valid = ref(false);
 const password = ref("");
-const passwordRules = [(v) => !!v || "Password is required", (v) => v.length >= 8];
+const passwordRules = [(v) => !!v || "Password is required", (v) => v.length >= 8 || "Too short password"];
 const showPassword = ref(false);
 const confirmPassword = ref("");
 const confirmPasswordRules = [(v) => !!v || "Confirm password is required", (v) => (!!v && v) === password.value || "Values do not match"];

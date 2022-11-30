@@ -8,7 +8,7 @@
       <div class="registration-container__form__top-inputs">
         <v-text-field label="Full name" :rules="fullNameRules" v-model="fullName" variant="underlined"></v-text-field>
         <v-text-field label="Email" :rules="emailRules" v-model="email" variant="underlined"></v-text-field>
-        <v-text-field label="Phone number" v-maska="'+38(###) ## ## ###'" placeholder="0999999999" :rules="phoneRules" v-model="phoneNumber" variant="underlined"></v-text-field>
+        <v-text-field label="Phone number" v-maska="'+38(###)## ## ###'" placeholder="0(99)99 99 999" :rules="phoneRules" v-model="phoneNumber" variant="underlined"></v-text-field>
       </div>
 
       <div class="registration-container__form__bottom-inputs">
@@ -59,7 +59,7 @@ const phoneRules = [(v) => !!v || "Phone is required"];
 const birthday = ref("");
 const birthdayRules = [(v) => !!v || "Birthday is required"];
 const password = ref("");
-const passwordRules = [(v) => !!v || "Password is required", (v) => v.length >= 8];
+const passwordRules = [(v) => !!v || "Password is required", (v) => v.length >= 8 || "Password too short"];
 const showPassword = ref(false);
 const confirmPassword = ref("");
 const confirmPasswordRules = [(v) => !!v || "Confirm password is required", (v) => (!!v && v) === password.value || "Values do not match"];
