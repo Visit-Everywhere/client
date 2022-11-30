@@ -24,12 +24,14 @@
         :append-inner-icon="showConfirmPassword ? 'mdi-eye-off' : 'mdi-eye'"
         variant="underlined"
       ></v-text-field>
-      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button">Restore</v-btn>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button" @click="newPassword">Restore</v-btn>
     </v-form>
   </div>
 </template>
 
 <script setup>
+import { authUserState } from "~/stores/authUserFroms";
+const { createNewPassword } = authUserState();
 const valid = ref(false);
 const password = ref("");
 const passwordRules = [(v) => !!v || "Name is required", (v) => v.length >= 8];
@@ -37,6 +39,14 @@ const showPassword = ref(false);
 const confirmPassword = ref("");
 const confirmPasswordRules = [(v) => !!v || "Name is required", (v) => (!!v && v) === password.value || "Values do not match"];
 const showConfirmPassword = ref(false);
+
+const newPassword = () => {
+  const passwordBody = {
+    email: authUserState().currentUser.userDto.email,
+    password: password.value,
+  };
+  createNewPassword(passwordBody);
+};
 </script>
 
 <style lang="scss" scoped>
@@ -57,6 +67,7 @@ const showConfirmPassword = ref(false);
     margin-top: 40px;
   }
   &__confirm {
+    color: #808080;
     margin: 24px 0 48px 0;
   }
   &__button {

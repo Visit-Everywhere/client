@@ -6,16 +6,21 @@
     </span>
     <v-form v-model="valid">
       <v-text-field label="Email" v-model="email" :rules="emailRules" hide-details="auto" class="form-container__input" type="email" variant="underlined"></v-text-field>
-      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button">Next</v-btn>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button" @click="restore">Next</v-btn>
     </v-form>
   </div>
 </template>
 
 <script setup>
+import { authUserState } from "~/stores/authUserFroms";
+const { restorePassword } = authUserState();
 const email = ref("");
 const valid = ref(false);
 
 const emailRules = [(v) => !!v || "E-mail is required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"];
+const restore = () => {
+  restorePassword(email.value);
+};
 </script>
 
 <style lang="scss" scoped>

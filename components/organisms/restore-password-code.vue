@@ -6,13 +6,23 @@
     </span>
     <v-form>
       <v-text-field label="Code" hide-details="auto" class="form-container__input" variant="underlined" v-model="code"></v-text-field>
-      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button">Restore</v-btn>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button" @click="verify">Restore</v-btn>
     </v-form>
   </div>
 </template>
 
 <script setup>
+import { authUserState } from "~/stores/authUserFroms";
+const { verifyCode } = authUserState();
 const code = ref("");
+
+const verify = () => {
+  const codeBody = {
+    email: authUserState().currentUser.userDto.email,
+    code: code.value,
+  };
+  verifyCode(codeBody);
+};
 </script>
 
 <style lang="scss" scoped>

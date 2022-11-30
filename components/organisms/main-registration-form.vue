@@ -8,7 +8,7 @@
       <div class="registration-container__form__top-inputs">
         <v-text-field label="Full name" :rules="fullNameRules" v-model="fullName" variant="underlined"></v-text-field>
         <v-text-field label="Email" :rules="emailRules" v-model="email" variant="underlined"></v-text-field>
-        <v-text-field label="Phone number" v-maska="'+38(###)-##-##-###'" placeholder="0999999999" :rules="phoneRules" v-model="phoneNumber" variant="underlined"></v-text-field>
+        <v-text-field label="Phone number" v-maska="'+38(###) ## ## ###'" placeholder="0999999999" :rules="phoneRules" v-model="phoneNumber" variant="underlined"></v-text-field>
       </div>
 
       <div class="registration-container__form__bottom-inputs">
@@ -34,7 +34,7 @@
         ></v-text-field>
       </div>
       <AtomsVeCheckbox veCheckboxId="iWant" checkboxLabel="I want to receive a newsletter to my email." alignText="center" v-model:checked="checkboxValue" />
-      <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click="test" :disabled="!valid">Create an account</v-btn>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="registration-container__form__button" @click="registration" :disabled="!enableBtn">Create an account</v-btn>
     </v-form>
     <div class="registration-container__continue">
       <h4>or continue with:</h4>
@@ -48,7 +48,7 @@
 
 <script setup>
 import { authUserState } from "~/stores/authUserFroms";
-const { test } = authUserState();
+const { createNewUser } = authUserState();
 const valid = ref(false);
 const fullName = ref("");
 const fullNameRules = [(v) => !!v || "Name is required"];
@@ -64,28 +64,44 @@ const showPassword = ref(false);
 const confirmPassword = ref("");
 const confirmPasswordRules = [(v) => !!v || "Name is required", (v) => (!!v && v) === password.value || "Values do not match"];
 const showConfirmPassword = ref(false);
-const checkboxValue = ref(true);
+const checkboxValue = ref(false);
 
-const registration = async () => {
+const enableBtn = computed(() => {
+  return checkboxValue.value && valid.value;
+});
+
+const registration = () => {
   const summary = {
     email: email.value,
     username: fullName.value,
     password: password.value,
+    birthday: birthday.value,
+    phone: phoneNumber.value,
+    news: checkboxValue.value,
   };
-  console.log(summary);
-  let response = await fetch("http://localhost:5000/user/register", {
-    method: "POST",
-    body: JSON.stringify(summary),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  if (response.status == 200) {
-    console.log("text");
-    const json = await response.json();
-    console.log(json);
-  }
+  createNewUser(summary);
 };
+
+// const registration = async () => {
+//   const summary = {
+//     email: email.value,
+//     username: fullName.value,
+//     password: password.value,
+//   };
+//   console.log(summary);
+//   let response = await fetch("http://localhost:5000/user/register", {
+//     method: "POST",
+//     body: JSON.stringify(summary),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   });
+//   if (response.status == 200) {
+//     console.log("text");
+//     const json = await response.json();
+//     console.log(json);
+//   }
+// };
 </script>
 
 <style lang="scss" scoped>
