@@ -24,7 +24,7 @@
         :append-inner-icon="showConfirmPassword ? 'mdi-eye-off' : 'mdi-eye'"
         variant="underlined"
       ></v-text-field>
-      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button" @click="newPassword">Restore</v-btn>
+      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button" :disabled="!valid" @click="newPassword">Restore</v-btn>
     </v-form>
   </div>
 </template>
@@ -34,10 +34,10 @@ import { authUserState } from "~/stores/authUserFroms";
 const { createNewPassword } = authUserState();
 const valid = ref(false);
 const password = ref("");
-const passwordRules = [(v) => !!v || "Name is required", (v) => v.length >= 8];
+const passwordRules = [(v) => !!v || "Password is required", (v) => v.length >= 8];
 const showPassword = ref(false);
 const confirmPassword = ref("");
-const confirmPasswordRules = [(v) => !!v || "Name is required", (v) => (!!v && v) === password.value || "Values do not match"];
+const confirmPasswordRules = [(v) => !!v || "Confirm password is required", (v) => (!!v && v) === password.value || "Values do not match"];
 const showConfirmPassword = ref(false);
 
 const newPassword = () => {

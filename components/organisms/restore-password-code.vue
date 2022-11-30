@@ -4,9 +4,9 @@
       <h1>Restore password</h1>
       <h5>Enter the 6-digit code you received.</h5>
     </span>
-    <v-form>
+    <v-form v-model="valid">
       <v-text-field label="Code" hide-details="auto" class="form-container__input" variant="underlined" v-model="code"></v-text-field>
-      <v-btn height="56px" rounded="pill" color="#38405F" class="form-container__button" @click="verify">Restore</v-btn>
+      <v-btn :rules="codeRules" height="56px" rounded="pill" color="#38405F" class="form-container__button" @click="verify" :disabled="!valid">Restore</v-btn>
     </v-form>
   </div>
 </template>
@@ -15,6 +15,8 @@
 import { authUserState } from "~/stores/authUserFroms";
 const { verifyCode } = authUserState();
 const code = ref("");
+const valid = ref(false);
+const codeRules = [(v) => !!v || "Code is required"];
 
 const verify = () => {
   const codeBody = {
