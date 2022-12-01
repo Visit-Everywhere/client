@@ -5,6 +5,7 @@ export default defineNuxtConfig({
       "process.env.DEBUG": false,
     },
   },
+  ssr: false,
   // meta: {
   //   title: "VE NAXUI",
   // },

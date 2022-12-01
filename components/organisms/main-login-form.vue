@@ -16,7 +16,7 @@
       </div>
       <AtomsVeCheckbox checkboxLabel="Stay authorized" class="login-container__form__checkbox" v-model="checkboxValue" :isChecked="checkboxValue" veCheckboxId="stay" />
       <div class="btn-login">
-        <v-btn class="login-container__form__button" height="56px" rounded="pill" color="#38405F" block :disabled="!valid">Login</v-btn>
+        <v-btn class="login-container__form__button" height="56px" rounded="pill" color="#38405F" block :disabled="!valid" @click="login">Login</v-btn>
       </div>
     </v-form>
     <div class="login-container__under-form">
@@ -28,14 +28,17 @@
         </div>
       </div>
       <div class="login-container__under-form__create">
-        <NuxtLink id="nuxt-links" to="http://localhost:3000/registration">Create account</NuxtLink>
-        <NuxtLink id="nuxt-links" to="#">Forgot password?</NuxtLink>
+        <NuxtLink id="nuxt-links" to="/registration">Create account</NuxtLink>
+        <NuxtLink id="nuxt-links" to="/restore-password">Forgot password?</NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { authUserState } from "~~/stores/authUserForms";
+const { loginUser } = authUserState();
+
 const email = ref("");
 const emailRules = [(v) => !!v || "E-mail is required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"];
 const password = ref("");
@@ -43,6 +46,10 @@ const passwordRules = [(v) => !!v || "Name is required"];
 const showPassword = ref(false);
 const valid = ref(false);
 const checkboxValue = ref(true);
+
+const login = () => {
+  loginUser(email, password);
+};
 </script>
 
 <style lang="scss" scoped>

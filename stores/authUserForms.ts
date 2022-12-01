@@ -52,6 +52,16 @@ export const authUserState = defineStore("authUser", {
       debugger;
       console.log(userFormRegistration);
     },
+    async loginUser(em: string, pass: string) {
+      const { $publicApi } = useNuxtApp();
+
+      try {
+        const data = await $publicApi.post("user/login", { email: "slipmaks@gmail.com", password: "123123123" });
+        console.log(data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    },
     verifyCode(userCode: Code) {
       debugger;
       console.log(userCode);

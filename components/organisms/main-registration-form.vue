@@ -47,7 +47,7 @@
 </template>
 
 <script setup>
-import { authUserState } from "~/stores/authUserFroms";
+import { authUserState } from "~~/stores/authUserForms";
 const { createNewUser } = authUserState();
 const valid = ref(false);
 const fullName = ref("");

@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { authUserState } from "~/stores/authUserFroms";
+import { authUserState } from "~~/stores/authUserForms";
 const { verifyCode } = authUserState();
 const code = ref("");
 const codeRules = [(v) => !!v || "Code is required", (v) => v.length <= 6 || "Longer than 6-digit"];
