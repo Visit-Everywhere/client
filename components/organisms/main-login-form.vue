@@ -38,6 +38,7 @@
 <script setup>
 import { authUserState } from "~~/stores/authUserForms";
 const { loginUser } = authUserState();
+const { post, get } = useNuxtApp().$publicApi;
 
 const email = ref("");
 const emailRules = [(v) => !!v || "E-mail is required", (v) => /.+@.+\..+/.test(v) || "E-mail must be valid"];
@@ -48,7 +49,13 @@ const valid = ref(false);
 const checkboxValue = ref(true);
 
 const login = () => {
-  loginUser(email, password);
+  loginUser({ email: email.value, password: password.value });
+  // try {
+  //   const data = await post("user/login", { email: "slipmaks@gmail.com", password: "123123123" });
+  //   console.log(data.data);
+  // } catch (e) {
+  //   console.log(e);
+  // }
 };
 </script>
 

@@ -1,4 +1,6 @@
 import { defineStore } from "pinia";
+import { useNuxtApp } from "#app";
+// const {post, get} = useNuxtApp().$publicApi //gg wp
 
 interface userDto {
   email: string;
@@ -52,11 +54,10 @@ export const authUserState = defineStore("authUser", {
       debugger;
       console.log(userFormRegistration);
     },
-    async loginUser(em: string, pass: string) {
-      const { $publicApi } = useNuxtApp();
-
+    async loginUser(req: { email: string; password: string }) {
+      debugger;
       try {
-        const data = await $publicApi.post("user/login", { email: "slipmaks@gmail.com", password: "123123123" });
+        const data = await useNuxtApp().$publicApi.post("user/login", req);
         console.log(data.data);
       } catch (e) {
         console.log(e);
