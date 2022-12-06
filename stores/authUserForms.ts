@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { useNuxtApp } from "#app";
+const router = useRouter();
 // const {post, get} = useNuxtApp().$publicApi //gg wp
 
 interface userDto {
@@ -50,12 +51,15 @@ export const authUserState = defineStore("authUser", {
     },
   }),
   actions: {
-    createNewUser(userFormRegistration: userRegistrationForm) {
-      debugger;
-      console.log(userFormRegistration);
+    async createNewUser(userFormRegistration: userRegistrationForm) {
+      try {
+        const data = await useNuxtApp().$publicApi.post("user/register", userFormRegistration);
+        router.push({ path: "/code" });
+      } catch (e) {
+        console.log(e);
+      }
     },
     async loginUser(req: { email: string; password: string }) {
-      debugger;
       try {
         const data = await useNuxtApp().$publicApi.post("user/login", req);
         console.log(data.data);
@@ -63,15 +67,18 @@ export const authUserState = defineStore("authUser", {
         console.log(e);
       }
     },
-    verifyCode(userCode: Code) {
-      debugger;
-      console.log(userCode);
+    async verifyCode(userCode: Code) {
+      try {
+        const data = await useNuxtApp().$publicApi.post("user/code", userCode);
+      } catch (e) {
+        console.log(e);
+      }
     },
-    createNewPassword(userNewPassword: newPassword) {
+    async createNewPassword(userNewPassword: newPassword) {
       debugger;
       console.log(userNewPassword);
     },
-    restorePassword(email: string) {
+    async restorePassword(email: string) {
       debugger;
       console.log(email);
     },
