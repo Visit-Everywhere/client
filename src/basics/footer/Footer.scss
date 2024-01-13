@@ -1,0 +1,117 @@
+//footer BG
+//$accent-dark-black: rgba(19, 22, 32, 1);
+@import "public/_variables.scss";
+
+footer {
+    background-color: $accent-dark-blue;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    div {
+        color: white;
+
+
+    }
+
+    a {
+        all: unset;
+        cursor: pointer;
+        opacity: 0.75;
+        font-family: $nunito-font;
+    }
+
+    p {
+        font-family: $nunito-font;
+    }
+
+    .get-on-img {
+        margin-bottom: 20px;
+    }
+
+    .under-footer {
+        margin-top: 30px;
+    }
+
+    /* For desktop screens */
+    @media lg {
+        div {
+            max-width: 70%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .col-sm-6 {
+            flex-basis: 25%; /* Show 1 columns per row on tablets/PC */
+        }
+
+    }
+
+    /* For mobile screens */
+    @media (max-width: 767px) {
+        .col-sm-6 {
+            flex-basis: 100%; /* Show 1 column per row on mobile */
+        }
+        .upper-footer {
+            p {
+                margin-top: 40px;
+            }
+
+            a {
+                margin-bottom: 200px;
+            }
+        }
+
+        .google-get-img {
+            margin-top: 20px;
+
+        }
+        .under-footer {
+            text-align: center;
+        }
+        footer {
+            border-radius: 30px 30px 0 0;
+        }
+    }
+
+    .btn {
+        &:active {
+            background-color: $accent-dark-blue;
+        }
+
+        border-radius: 13px;
+        border-color: rgba(166, 166, 166, 1);
+        width: 180px;
+        height: 60px;
+        font-size: 20px;
+        font-family: $nunito-font;
+        background-color: $accent-dark-blue;
+
+
+    }
+
+    .dropdown-item {
+        color: white;
+        margin-left: 8px;
+        background: none;
+        margin-bottom: 0 !important;
+        max-width: 108px;
+        border-radius: 8px;
+    }
+
+    .btn {
+        &:hover {
+            background-color: $accent-dark-blue;
+        }
+    }
+
+    .dropdown-menu {
+
+        border-radius: 10px;
+        color: white;
+        background-color: $accent-dark-blue;
+        border-color: rgba(166, 166, 166, 1);
+    }
+}
+
+

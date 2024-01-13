@@ -1,0 +1,32 @@
+/* Reset all margins, paddings, and borders */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Reset text decoration */
+a,
+a:visited {
+  text-decoration: none;
+}
+
+/* Reset list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Reset form elements */
+input,
+button,
+textarea,
+select {
+  appearance: none;
+  border-radius: 0;
+  border: 0;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
