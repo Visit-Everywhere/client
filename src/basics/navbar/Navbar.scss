@@ -1,0 +1,19 @@
+//footer BG
+//$accent-dark-black: rgba(19, 22, 32, 1);
+@import "public/_variables.scss";
+
+.navbar {
+    height: 140px;
+    background: $accent-dark-blue;
+    .logo{
+        margin-left: 20vw;
+
+    }
+
+
+    @media (max-width: 767px) {
+        height: 80px;
+    }
+}
+
+
